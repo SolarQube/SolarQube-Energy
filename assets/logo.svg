@@ -1,0 +1,96 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 180" width="100%" height="100%">
+  <defs>
+    <!-- Solar Wafer Grid Pattern -->
+    <pattern id="solarGrid" width="12" height="12" patternUnits="userSpaceOnUse">
+      <rect width="12" height="12" fill="#0A183D" />
+      <path d="M 12 0 L 0 0 0 12" fill="none" stroke="#1D346A" stroke-width="0.75" />
+      <circle cx="6" cy="6" r="0.5" fill="#3A5FA8" opacity="0.6" />
+    </pattern>
+
+    <!-- Solar Wafer Grid for White / Light Logo -->
+    <pattern id="solarGridLight" width="12" height="12" patternUnits="userSpaceOnUse">
+      <rect width="12" height="12" fill="#FFFFFF" />
+      <path d="M 12 0 L 0 0 0 12" fill="none" stroke="#D1E4FA" stroke-width="0.75" />
+      <circle cx="6" cy="6" r="0.5" fill="#00A3E0" opacity="0.6" />
+    </pattern>
+
+    <!-- Orb Gradients & Glow -->
+    <radialGradient id="orbBackground" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#FFFFFF" />
+      <stop offset="20%" stop-color="#A2EEFF" />
+      <stop offset="45%" stop-color="#00BAF2" />
+      <stop offset="70%" stop-color="#0066B3" />
+      <stop offset="90%" stop-color="#0A255C" />
+      <stop offset="100%" stop-color="#061230" />
+    </radialGradient>
+
+    <radialGradient id="orbCore" cx="45%" cy="40%" r="45%">
+      <stop offset="0%" stop-color="#FFFFFF" />
+      <stop offset="35%" stop-color="#B8F4FF" />
+      <stop offset="70%" stop-color="#00C2FF" />
+      <stop offset="100%" stop-color="#005A9C" />
+    </radialGradient>
+
+    <linearGradient id="cyanGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00B8F5" />
+      <stop offset="100%" stop-color="#0088CC" />
+    </linearGradient>
+
+    <filter id="glow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="3.5" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+
+  <g id="solarqube-logo">
+    <!-- S -->
+    <path d="M 32 62 C 32 50 42 42 58 42 C 75 42 84 51 84 61 L 67 61 C 67 56 63 53 58 53 C 52 53 48 55 48 59 C 48 64 52 66 60 68 L 68 71 C 81 74 86 80 86 90 C 86 102 75 110 58 110 C 40 110 30 101 30 89 L 47 89 C 47 95 52 99 58 99 C 65 99 69 96 69 91 C 69 86 65 84 57 81 L 49 79 C 37 75 32 71 32 62 Z" fill="url(#solarGrid)" />
+
+    <!-- O (Vortex Glowing Orb) -->
+    <g transform="translate(122, 76)">
+      <!-- Outer soft halo -->
+      <circle cx="0" cy="0" r="35" fill="#00BAF2" opacity="0.3" filter="url(#glow)" />
+      <!-- Main Orb Sphere -->
+      <circle cx="0" cy="0" r="31" fill="url(#orbBackground)" />
+      
+      <!-- Luminous Orbiting Rings / Vortex Waves -->
+      <ellipse cx="-1" cy="0" rx="27" ry="25" fill="none" stroke="#FFFFFF" stroke-width="1.8" opacity="0.9" stroke-dasharray="80 25 40 15" transform="rotate(-25)" />
+      <ellipse cx="0" cy="0" rx="25" ry="23" fill="none" stroke="#70E5FF" stroke-width="2.2" opacity="0.85" stroke-dasharray="60 30 30 20" transform="rotate(35)" />
+      <ellipse cx="1" cy="-1" rx="21" ry="18" fill="none" stroke="#00D2FF" stroke-width="1.5" opacity="0.75" transform="rotate(-65)" />
+      
+      <!-- Core Flare -->
+      <circle cx="-3" cy="-3" r="13" fill="url(#orbCore)" />
+      <circle cx="-4" cy="-4" r="6.5" fill="#FFFFFF" opacity="0.95" />
+    </g>
+
+    <!-- L -->
+    <path d="M 166 44 L 183 44 L 183 96 L 214 96 L 214 108 L 166 108 Z" fill="url(#solarGrid)" />
+
+    <!-- A -->
+    <path d="M 234 44 L 253 44 L 273 108 L 255 108 L 250 93 L 236 93 L 231 108 L 214 108 Z M 243 59 L 238 82 L 248 82 Z" fill="url(#solarGrid)" />
+
+    <!-- R -->
+    <path d="M 282 44 L 308 44 C 322 44 330 51 330 62 C 330 71 324 77 313 79 L 333 108 L 314 108 L 297 81 L 297 108 L 282 108 Z M 297 56 L 297 70 L 307 70 C 313 70 316 67 316 63 C 316 59 313 56 307 56 Z" fill="url(#solarGrid)" />
+
+    <!-- Q (Distinct Cyan with Upward Arrow) -->
+    <g transform="translate(340, 42)">
+      <!-- Main Q Body -->
+      <path d="M 31 0 C 13.5 0 0 15 0 33.5 C 0 52 13.5 67 31 67 C 38.5 67 45.5 64.5 51 60 L 57 68 L 67 60 L 60.5 51.5 C 64 46.5 66 40.5 66 33.5 C 66 15 52.5 0 31 0 Z M 31 13.5 C 41.5 13.5 50 22.5 50 33.5 C 50 39.5 47.5 44.8 43.5 48.5 L 39 42.5 L 32.5 49 L 39.5 57 C 37 58.5 34 59.5 31 59.5 C 20.5 59.5 14 50.5 14 33.5 C 14 22.5 20.5 13.5 31 13.5 Z" fill="url(#cyanGrad)" />
+      <!-- Upward Diagonal Arrow (↗) inside Q -->
+      <path d="M 25 43 L 42 26 M 42 26 L 31 26 M 42 26 L 42 37" fill="none" stroke="#00A8E8" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round" />
+      <path d="M 25 43 L 42 26 M 42 26 L 31 26 M 42 26 L 42 37" fill="none" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" opacity="0.9" />
+    </g>
+
+    <!-- U -->
+    <path d="M 420 44 L 436 44 L 436 84 C 436 93 441 97 448 97 C 455 97 460 93 460 84 L 460 44 L 476 44 L 476 85 C 476 100 464 110 448 110 C 432 110 420 100 420 85 Z" fill="url(#solarGrid)" />
+
+    <!-- B -->
+    <path d="M 488 44 L 514 44 C 526 44 533 50 533 58 C 533 64 529 68 522 70 C 531 72 536 78 536 86 C 536 97 527 108 513 108 L 488 108 Z M 504 56 L 504 68 L 512 68 C 517 68 520 65 520 62 C 520 59 517 56 512 56 Z M 504 78 L 504 96 L 513 96 C 519 96 522 92 522 87 C 522 82 519 78 513 78 Z" fill="url(#solarGrid)" />
+
+    <!-- E -->
+    <path d="M 548 44 L 592 44 L 592 57 L 565 57 L 565 69 L 588 69 L 588 81 L 565 81 L 565 95 L 593 95 L 593 108 L 548 108 Z" fill="url(#solarGrid)" />
+
+    <!-- ENERGY text underneath QUBE -->
+    <text x="375" y="148" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="28" font-weight="800" letter-spacing="0.26em" fill="#0A183D">ENERGY</text>
+  </g>
+</svg>
