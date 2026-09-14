@@ -296,7 +296,7 @@ ${showBanner ? `
     <!-- Brand Info & Social -->
     <div class="lg:w-1/3">
       <a class="flex items-center gap-2 mb-4 inline-block min-h-[44px]" href="index.html" aria-label="SolarQube Home">
-        <img alt="SolarQube Energy" class="h-12 w-auto object-contain" src="/assets/logo/solarqube-logo.png"/>
+        <img alt="SolarQube Energy" class="h-12 w-auto object-contain" src="/assets/logo/solarqube-logo.jpg"/>
       </a>
       <p class="font-body-md text-body-md text-on-primary/80 max-w-sm mb-6 leading-relaxed">
         SolarQube Energy delivers complete solar EPC solutions for homes, businesses, and industrial facilities across Jalakandapuram, Salem, Erode, Tharamangalam, and surrounding areas.
