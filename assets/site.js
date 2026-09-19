@@ -550,22 +550,22 @@ function initSavingsCalculator() {
     }
     if (roiBadge) {
       roiBadge.classList.remove(
-        'bg-[#4a4ce0]/20', 'text-[#4a4ce0]', 'border-[#4a4ce0]/30',
-        'bg-sky-400/20', 'text-sky-300', 'border-sky-400/30',
-        'bg-amber-400/20', 'text-amber-300', 'border-amber-400/30'
+        'bg-secondary/10', 'text-secondary',
+        'bg-emerald-100', 'text-emerald-700',
+        'bg-amber-100', 'text-amber-800'
       );
       if (paybackYearsNumeric === null) {
         roiBadge.textContent = 'N/A';
-        roiBadge.classList.add('bg-amber-400/20', 'text-amber-300', 'border-amber-400/30');
+        roiBadge.classList.add('bg-amber-100', 'text-amber-800');
       } else if (paybackYearsNumeric <= 4) {
         roiBadge.textContent = 'Fast ROI';
-        roiBadge.classList.add('bg-[#4a4ce0]/20', 'text-[#4a4ce0]', 'border-[#4a4ce0]/30');
+        roiBadge.classList.add('bg-emerald-100', 'text-emerald-700');
       } else if (paybackYearsNumeric <= 6) {
         roiBadge.textContent = 'Good ROI';
-        roiBadge.classList.add('bg-sky-400/20', 'text-sky-300', 'border-sky-400/30');
+        roiBadge.classList.add('bg-secondary/10', 'text-secondary');
       } else {
         roiBadge.textContent = 'Standard ROI';
-        roiBadge.classList.add('bg-amber-400/20', 'text-amber-300', 'border-amber-400/30');
+        roiBadge.classList.add('bg-amber-100', 'text-amber-800');
       }
     }
   }

@@ -278,7 +278,7 @@
   <div class="absolute top-full left-0 mt-1 w-80 bg-white rounded-2xl shadow-2xl border border-outline-variant/60 p-3 opacity-0 invisible translate-y-2 group-hover:opacity-100 group-hover:visible group-hover:translate-y-0 transition-all duration-200 z-50 pointer-events-none group-hover:pointer-events-auto">
     <div class="text-[11px] font-bold text-secondary uppercase tracking-wider px-3 py-1 mb-1">Knowledge & Guides</div>
     <div class="space-y-1">
-      <a href="index.html#news" class="flex items-start gap-3 p-2.5 rounded-xl hover:bg-surface-container-low transition group/item">
+      <a href="blog.html" class="flex items-start gap-3 p-2.5 rounded-xl hover:bg-surface-container-low transition group/item">
         <div class="w-8 h-8 rounded-lg bg-secondary/10 text-secondary flex items-center justify-center flex-shrink-0 group-hover/item:bg-secondary group-hover/item:text-white transition-colors">
           <span class="material-symbols-outlined text-base">newspaper</span>
         </div>
@@ -359,7 +359,7 @@
   <div class="py-2 border-b border-outline-variant/30">
     <div class="text-xs font-bold text-secondary uppercase tracking-wider mb-2">Resources</div>
     <div class="pl-2 space-y-2 text-sm">
-      <a class="block py-1 text-on-surface-variant hover:text-secondary" href="index.html#news">Blog / News</a>
+      <a class="block py-1 text-on-surface-variant hover:text-secondary" href="blog.html">Blog / News</a>
       <a class="block py-1 text-on-surface-variant hover:text-secondary" href="commercial-industrial-solar.html#tax-benefits">Income Tax Benefits Guide</a>
       <a class="block py-1 text-on-surface-variant hover:text-secondary" href="residential-solar.html#subsidy">Subsidy Scheme Info</a>
       <a class="block py-1 text-on-surface-variant hover:text-secondary" href="contact.html#faq">FAQs</a>
@@ -471,247 +471,137 @@
 
 <!-- Solar Savings Estimator Section -->
 <section class="mb-stack-lg scroll-reveal" id="calculator">
-<div class="text-center mb-stack-md">
-  <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-secondary/10 border border-secondary/20 text-secondary font-label-md text-xs uppercase tracking-wider font-bold mb-2">
-    <span class="material-symbols-outlined text-sm">calculate</span>
-    <span>Solar Savings Estimator</span>
-  </div>
-  <h2 class="font-headline-lg text-headline-lg text-primary-container mb-2">Estimate Your Solar Savings</h2>
-  <p class="font-body-md text-body-md text-on-surface-variant max-w-2xl mx-auto">
-    Calculate recommended system size, PM Surya Ghar central subsidy deduction, out-of-pocket investment, and estimated payback period in Tamil Nadu.
+
+<div class="max-w-5xl mx-auto mb-8">
+  <span class="block text-xs font-bold uppercase tracking-[0.18em] text-secondary mb-3">Savings Estimator</span>
+  <h2 class="font-headline-lg text-3xl md:text-4xl text-primary mb-3">Estimate your solar savings</h2>
+  <p class="font-body-md text-base text-on-surface-variant max-w-xl leading-relaxed">
+    Move the slider to your average monthly electricity bill. We'll size the system, apply the PM Surya Ghar subsidy, and show your payback period.
   </p>
-  <div class="inline-flex items-center gap-1.5 text-xs text-on-surface-variant bg-surface-container-high/70 px-3.5 py-1.5 rounded-lg mt-3 border border-outline-variant/30">
-    <span class="material-symbols-outlined text-xs text-secondary">info</span>
-    <span><strong>Estimate only:</strong> Values shown are indicative. Actual system capacity, subsidy sanction, and solar generation vary by site orientation, roof slope, and TANGEDCO net metering parameters.</span>
-  </div>
 </div>
 
-<!-- Main Estimator Card with gentle shadow effect -->
-<div class="bg-white rounded-3xl p-6 sm:p-8 lg:p-10 shadow-xl border border-outline-variant/40 max-w-5xl mx-auto transition-all">
-  <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-    
-    <!-- Left Column: Interactive Input Fields (Range Slider, Shading Dropdown, Presets) -->
-    <div class="lg:col-span-6 flex flex-col gap-6">
-      
-      <div class="border-b border-outline-variant/40 pb-3 flex items-center justify-between">
-        <h3 class="font-title-md text-base font-bold text-primary flex items-center gap-2">
-          <span class="w-7 h-7 rounded-lg bg-secondary/10 text-secondary flex items-center justify-center">
-            <span class="material-symbols-outlined text-base">tune</span>
-          </span>
-          Your Energy Profile
-        </h3>
-        <span class="text-xs font-semibold text-on-surface-variant">Step 1 of 2</span>
-      </div>
+<div class="bg-white rounded-3xl border border-outline-variant/50 max-w-5xl mx-auto overflow-hidden">
+  <div class="grid grid-cols-1 lg:grid-cols-2">
 
-      <!-- 1. Monthly Electricity Bill Range Slider -->
-      <div class="bg-surface-container-low/70 p-5 rounded-2xl border border-outline-variant/40 space-y-3">
-        <div class="flex justify-between items-center">
-          <label for="calc-bill-slider" class="font-label-md text-sm text-primary font-bold flex items-center gap-2">
-            <span class="material-symbols-outlined text-secondary text-base">bolt</span>
-            Monthly Electricity Bill
-          </label>
-          <div class="bg-secondary text-white font-headline-md font-bold px-3.5 py-1 rounded-xl text-lg shadow-sm" id="calc-bill-display">
-            ₹4,000
-          </div>
+    <!-- LEFT: Inputs -->
+    <div class="p-6 sm:p-8 lg:p-10 border-b lg:border-b-0 lg:border-r border-outline-variant/50 flex flex-col">
+
+      <!-- Monthly bill -->
+      <div class="mb-10">
+        <div class="flex items-baseline justify-between mb-5">
+          <label for="calc-bill-slider" class="text-sm font-semibold text-on-surface-variant">Monthly electricity bill</label>
+          <span class="font-headline-lg text-3xl text-primary" id="calc-bill-display">&#8377;4,000</span>
         </div>
-        
-        <input 
+
+        <input
           id="calc-bill-slider"
-          class="w-full h-2.5 bg-surface-container-high rounded-lg appearance-none cursor-pointer accent-secondary transition-all" 
-          max="20000" 
-          min="0" 
-          step="250" 
-          type="range" 
+          class="w-full h-1.5 bg-surface-container-high rounded-full appearance-none cursor-pointer accent-secondary"
+          max="20000"
+          min="0"
+          step="250"
+          type="range"
           value="4000"
-          aria-label="Monthly Electricity Bill Slider"
+          aria-label="Monthly electricity bill"
         />
-        
-        <div class="flex justify-between font-label-md text-xs text-on-surface-variant font-medium pt-0.5">
-          <span>₹0 (Zero Bill)</span>
-          <span>₹4,000</span>
-          <span>₹10,000</span>
-          <span>₹20,000+</span>
-        </div>
 
-        <!-- Quick Preset Buttons -->
-        <div class="pt-3 border-t border-outline-variant/30">
-          <div class="text-[11px] font-bold text-on-surface-variant uppercase tracking-wider mb-2">Quick Bill Select:</div>
-          <div class="flex flex-wrap gap-2">
-            <button type="button" onclick="const s=document.getElementById('calc-bill-slider'); if(s){s.value=0; s.dispatchEvent(new Event('input'));}" class="px-2.5 py-1 rounded-lg border border-outline-variant/60 bg-white text-xs font-semibold text-primary hover:bg-secondary/10 hover:border-secondary hover:text-secondary transition-colors">
-              ₹0
-            </button>
-            <button type="button" onclick="const s=document.getElementById('calc-bill-slider'); if(s){s.value=1500; s.dispatchEvent(new Event('input'));}" class="px-2.5 py-1 rounded-lg border border-outline-variant/60 bg-white text-xs font-semibold text-primary hover:bg-secondary/10 hover:border-secondary hover:text-secondary transition-colors">
-              ₹1,500
-            </button>
-            <button type="button" onclick="const s=document.getElementById('calc-bill-slider'); if(s){s.value=3000; s.dispatchEvent(new Event('input'));}" class="px-2.5 py-1 rounded-lg border border-outline-variant/60 bg-white text-xs font-semibold text-primary hover:bg-secondary/10 hover:border-secondary hover:text-secondary transition-colors">
-              ₹3,000
-            </button>
-            <button type="button" onclick="const s=document.getElementById('calc-bill-slider'); if(s){s.value=4000; s.dispatchEvent(new Event('input'));}" class="px-2.5 py-1 rounded-lg border border-secondary bg-secondary/10 text-xs font-bold text-secondary transition-colors">
-              ₹4,000
-            </button>
-            <button type="button" onclick="const s=document.getElementById('calc-bill-slider'); if(s){s.value=6500; s.dispatchEvent(new Event('input'));}" class="px-2.5 py-1 rounded-lg border border-outline-variant/60 bg-white text-xs font-semibold text-primary hover:bg-secondary/10 hover:border-secondary hover:text-secondary transition-colors">
-              ₹6,500
-            </button>
-            <button type="button" onclick="const s=document.getElementById('calc-bill-slider'); if(s){s.value=8500; s.dispatchEvent(new Event('input'));}" class="px-2.5 py-1 rounded-lg border border-outline-variant/60 bg-white text-xs font-semibold text-primary hover:bg-secondary/10 hover:border-secondary hover:text-secondary transition-colors">
-              ₹8,500
-            </button>
-            <button type="button" onclick="const s=document.getElementById('calc-bill-slider'); if(s){s.value=12500; s.dispatchEvent(new Event('input'));}" class="px-2.5 py-1 rounded-lg border border-outline-variant/60 bg-white text-xs font-semibold text-primary hover:bg-secondary/10 hover:border-secondary hover:text-secondary transition-colors">
-              ₹12,500+
-            </button>
-          </div>
+        <div class="flex justify-between text-xs text-on-surface-variant mt-3">
+          <span>&#8377;0</span>
+          <span>&#8377;10,000</span>
+          <span>&#8377;20,000+</span>
         </div>
       </div>
 
-      <!-- 2. Roof Shading Level Dropdown Selector -->
-      <div class="bg-surface-container-low/70 p-5 rounded-2xl border border-outline-variant/40 space-y-3">
-        <label for="calc-shading-dropdown" class="font-label-md text-sm text-primary font-bold flex items-center justify-between">
-          <span class="flex items-center gap-2">
-            <span class="material-symbols-outlined text-secondary text-base">wb_sunny</span>
-            Roof Shading Condition
-          </span>
-          <span class="text-[11px] font-normal text-on-surface-variant">affects generation efficiency</span>
-        </label>
+      <!-- Roof shading -->
+      <div class="mb-8">
+        <label for="calc-shading-dropdown" class="block text-sm font-semibold text-on-surface-variant mb-3">Roof shading</label>
 
         <div class="relative">
-          <select id="calc-shading-dropdown" class="w-full appearance-none bg-white border border-outline-variant/60 rounded-xl pl-4 pr-11 py-3 text-sm font-semibold text-primary focus:outline-none focus:border-secondary focus:ring-2 focus:ring-secondary/20 transition-all cursor-pointer overflow-hidden text-ellipsis whitespace-nowrap">
-            <option value="minimal" selected>☀️ Minimal Shading (100% sunlight)</option>
-            <option value="some">⛅ Some Shading (~90% yield)</option>
-            <option value="heavy">☁️ Heavy Shading (~75% yield)</option>
+          <select id="calc-shading-dropdown" class="w-full appearance-none bg-white border border-outline-variant rounded-xl pl-4 pr-11 py-3.5 text-sm font-medium text-primary focus:outline-none focus:border-secondary focus:ring-2 focus:ring-secondary/20 cursor-pointer">
+            <option value="minimal" selected>Minimal &mdash; full sunlight</option>
+            <option value="some">Some &mdash; partial shade</option>
+            <option value="heavy">Heavy &mdash; significant shade</option>
           </select>
-          <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-3.5 text-on-surface-variant">
-            <span class="material-symbols-outlined text-lg">expand_more</span>
-          </div>
+          <span class="material-symbols-outlined pointer-events-none absolute right-3.5 top-1/2 -translate-y-1/2 text-on-surface-variant text-lg">expand_more</span>
         </div>
 
-        <div class="flex items-center gap-2 text-xs text-on-surface-variant pt-1">
-          <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
-          <span>Applied factor: <strong class="text-primary font-semibold" id="calc-shading-factor-label">100% Solar Yield (1.00)</strong></span>
-        </div>
+        <p class="text-xs text-on-surface-variant mt-3">
+          Applied yield: <span class="font-semibold text-primary" id="calc-shading-factor-label">100% Solar Yield (1.00)</span>
+        </p>
       </div>
 
-      <!-- Government Scheme Notice Badge -->
-      <div class="p-4 bg-emerald-50/80 rounded-2xl border border-emerald-200/70 flex items-start gap-3">
-        <span class="material-symbols-outlined text-emerald-600 text-xl mt-0.5">verified_user</span>
-        <div class="text-xs text-emerald-950 leading-relaxed">
-          <strong class="font-bold text-emerald-900">PM Surya Ghar Direct Subsidy:</strong> Central Government DBT credit (₹30,000 to ₹78,000) deposited directly into your bank account. SolarQube takes care of national portal documentation.
-        </div>
+      <!-- Subsidy note -->
+      <div class="border-t border-outline-variant/50 pt-6 mt-auto">
+        <p class="text-xs text-on-surface-variant leading-relaxed">
+          <span class="font-semibold text-primary">PM Surya Ghar subsidy</span> of &#8377;30,000&ndash;&#8377;78,000 is credited directly to your bank account. We handle the portal paperwork.
+        </p>
       </div>
+
     </div>
 
-    <!-- Right Column: Polished Result Summary with Color-Coded Badges & Clear Typography -->
-    <div class="lg:col-span-6 flex flex-col gap-4">
-      
-      <div class="border-b border-outline-variant/40 pb-3 flex items-center justify-between">
-        <h3 class="font-title-md text-base font-bold text-primary flex items-center gap-2">
-          <span class="w-7 h-7 rounded-lg bg-emerald-100 text-emerald-700 flex items-center justify-center">
-            <span class="material-symbols-outlined text-base">analytics</span>
-          </span>
-          Estimated Savings Summary
-        </h3>
-        <span class="inline-flex items-center px-2 py-0.5 rounded-md text-[11px] font-bold bg-amber-100 text-amber-800 border border-amber-200">
-          Estimate Only
-        </span>
+    <!-- RIGHT: Results -->
+    <div class="p-6 sm:p-8 lg:p-10 bg-surface-container-low/50">
+
+      <!-- Headline saving -->
+      <div class="mb-8">
+        <div class="flex items-center gap-2 mb-2">
+          <span class="text-sm font-semibold text-on-surface-variant">You could save</span>
+          <span class="text-[11px] font-bold text-emerald-700 bg-emerald-100 px-2 py-0.5 rounded-full" id="calc-bill-cut-badge">~85% Bill Cut</span>
+        </div>
+        <div class="font-headline-lg text-5xl text-emerald-700 leading-none mb-2" id="calc-monthly-savings">&#8377;3,400</div>
+        <div class="text-sm text-on-surface-variant" id="calc-annual-savings">&#8377;40,800 / year</div>
       </div>
 
-      <!-- Primary Metrics Cards -->
-      <div class="grid grid-cols-2 gap-3.5">
-        
-        <!-- Recommended System Card -->
-        <div class="p-4.5 bg-surface-container-low rounded-2xl border border-outline-variant/40 flex flex-col justify-between">
-          <div>
-            <div class="flex items-center justify-between">
-              <span class="text-xs text-on-surface-variant font-medium">Recommended System</span>
-              <span class="px-2 py-0.5 rounded-full text-[10px] font-bold bg-blue-100 text-blue-700">Optimal</span>
-            </div>
-            <div class="text-2xl font-bold text-primary mt-1.5" id="calc-system-size">3 kW</div>
-          </div>
-          <div class="text-[11px] text-on-surface-variant mt-2 flex items-center gap-1">
-            <span class="material-symbols-outlined text-xs text-secondary">roofing</span>
-            <span id="calc-roof-area">~255 sq. ft. shade-free</span>
-          </div>
+      <!-- Breakdown rows -->
+      <dl class="border-t border-outline-variant/50">
+
+        <div class="flex items-baseline justify-between py-4 border-b border-outline-variant/50">
+          <dt class="text-sm text-on-surface-variant">Recommended system</dt>
+          <dd class="text-right">
+            <span class="font-semibold text-primary" id="calc-system-size">3 kW</span>
+            <span class="block text-xs text-on-surface-variant mt-0.5" id="calc-roof-area">~255 sq. ft. shade-free</span>
+          </dd>
         </div>
 
-        <!-- Monthly Savings Card with Green Badge -->
-        <div class="p-4.5 bg-emerald-50/50 rounded-2xl border border-emerald-200/60 flex flex-col justify-between">
-          <div>
-            <div class="flex items-center justify-between">
-              <span class="text-xs text-emerald-800 font-medium">Monthly Savings</span>
-              <span class="px-2 py-0.5 rounded-full text-[10px] font-bold bg-emerald-100 text-emerald-700" id="calc-bill-cut-badge">~85% Bill Cut</span>
-            </div>
-            <div class="text-2xl font-bold text-emerald-700 mt-1.5" id="calc-monthly-savings">₹3,400</div>
-          </div>
-          <div class="text-[11px] text-emerald-800/80 mt-2 font-semibold" id="calc-annual-savings">
-            ₹40,800 / year
-          </div>
+        <div class="flex items-baseline justify-between py-4 border-b border-outline-variant/50">
+          <dt class="text-sm text-on-surface-variant">Gross system cost</dt>
+          <dd class="font-semibold text-primary" id="calc-gross-cost">&#8377;2,00,000</dd>
         </div>
 
-      </div>
-
-      <!-- Financial Cost & Subsidy Breakdown Box -->
-      <div class="bg-surface-container-lowest p-5 rounded-2xl border border-outline-variant/40 space-y-3 shadow-sm">
-        <div class="text-xs font-bold text-primary uppercase tracking-wider border-b border-outline-variant/30 pb-2.5 flex items-center justify-between">
-          <span>Investment &amp; Subsidy Breakdown</span>
-          <span class="text-[10px] text-on-surface-variant font-medium">Tamil Nadu Benchmark</span>
+        <div class="flex items-baseline justify-between py-4 border-b border-outline-variant/50">
+          <dt class="text-sm text-on-surface-variant">Govt subsidy</dt>
+          <dd class="font-semibold text-emerald-700" id="calc-subsidy-deduction">- &#8377;78,000</dd>
         </div>
 
-        <div class="flex justify-between items-center text-sm">
-          <span class="text-on-surface-variant flex items-center gap-1.5">
-            <span class="w-1.5 h-1.5 rounded-full bg-slate-400"></span>
-            Estimated Gross System Cost:
-          </span>
-          <span class="font-semibold text-primary" id="calc-gross-cost">₹2,00,000</span>
+        <div class="flex items-baseline justify-between py-5 border-b border-outline-variant/50">
+          <dt class="text-sm font-semibold text-primary">Your net cost</dt>
+          <dd class="font-headline-lg text-2xl text-primary" id="calc-net-cost">&#8377;1,22,000</dd>
         </div>
 
-        <div class="flex justify-between items-center text-sm text-emerald-700 bg-emerald-50/60 p-2.5 rounded-xl border border-emerald-200/50">
-          <span class="flex items-center gap-1.5 font-semibold text-xs sm:text-sm">
-            <span class="material-symbols-outlined text-base text-emerald-600">redeem</span>
-            Govt Subsidy (PM Surya Ghar DBT):
-          </span>
-          <span class="font-bold text-sm sm:text-base text-emerald-700" id="calc-subsidy-deduction">- ₹78,000</span>
+        <div class="flex items-baseline justify-between py-5">
+          <dt class="text-sm text-on-surface-variant">
+            Payback period
+            <span class="ml-1.5 text-[11px] font-bold text-secondary bg-secondary/10 px-2 py-0.5 rounded-full align-middle" id="calc-roi-badge">Fast ROI</span>
+          </dt>
+          <dd class="font-headline-lg text-2xl text-secondary" id="calc-payback-years">~3.0 Years</dd>
         </div>
 
-        <div class="pt-3 border-t border-outline-variant/30 flex justify-between items-center">
-          <div>
-            <div class="text-xs text-on-surface-variant font-bold uppercase tracking-wider">Estimated Net Out-of-Pocket Cost</div>
-            <div class="text-[11px] text-on-surface-variant mt-0.5">Your actual net cost after direct subsidy</div>
-          </div>
-          <div class="text-2xl font-bold text-primary" id="calc-net-cost">
-            ₹1,22,000
-          </div>
-        </div>
-      </div>
+      </dl>
 
-      <!-- Subsidy-Adjusted Payback Banner with Color-Coded Accent -->
-      <div class="bg-[#1b1d3a] text-white p-4.5 rounded-2xl flex items-center justify-between shadow-md">
-        <div>
-          <div class="flex items-center gap-2">
-            <span class="text-xs text-[#e4e4fb]">Subsidy-Adjusted Payback Period</span>
-            <span class="px-2 py-0.2 rounded text-[10px] font-bold bg-[#4a4ce0]/20 text-[#4a4ce0] border border-[#4a4ce0]/30" id="calc-roi-badge">Fast ROI</span>
-          </div>
-          <div class="text-2xl font-bold text-[#4a4ce0] mt-1" id="calc-payback-years">~3.0 Years</div>
-          <div class="text-[11px] text-white/70 mt-0.5">25-year Tier-1 panel performance warranty</div>
-        </div>
-        <div class="w-11 h-11 rounded-xl bg-white/10 flex items-center justify-center text-[#4a4ce0]">
-          <span class="material-symbols-outlined text-2xl">trending_up</span>
-        </div>
-      </div>
+      <a href="contact.html" class="mt-6 flex items-center justify-center gap-2 w-full bg-primary text-on-primary font-semibold text-sm py-4 rounded-xl hover:bg-primary-container transition-colors">
+        <span>Book a free rooftop survey</span>
+        <span class="material-symbols-outlined text-base">arrow_forward</span>
+      </a>
 
-      <!-- Estimate Disclaimer & CTA Action -->
-      <div class="pt-1">
-        <p class="text-[11px] text-on-surface-variant text-center mb-3">
-          *Note: All calculations are estimated guidelines. Official cost and solar output depend on precise site survey analysis and shadow mapping.
-        </p>
-        <a href="contact.html" class="flex items-center justify-center gap-2 w-full bg-primary text-on-primary font-semibold text-sm py-3.5 rounded-xl hover:bg-primary-container transition-all shadow-md active:scale-95">
-          <span>Book Free Rooftop Survey &amp; Exact Quote</span>
-          <span class="material-symbols-outlined text-base">arrow_forward</span>
-        </a>
-      </div>
+      <p class="text-xs text-on-surface-variant text-center mt-4 leading-relaxed">
+        Indicative estimate. Final figures depend on a site survey and TANGEDCO net-metering approval.
+      </p>
 
     </div>
 
   </div>
 </div>
 </section>
+
 
 <!-- Subsidy Breakdown Section -->
 <section id="subsidy" class="mb-stack-lg bg-surface-container-low rounded-xl p-margin-mobile md:p-margin-desktop">

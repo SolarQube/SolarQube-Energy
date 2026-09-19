@@ -124,7 +124,7 @@
       <div class="absolute top-full left-0 mt-1 w-80 bg-white rounded-2xl shadow-2xl border border-outline-variant/60 p-3 opacity-0 invisible translate-y-2 group-hover:opacity-100 group-hover:visible group-hover:translate-y-0 transition-all duration-200 z-50 pointer-events-none group-hover:pointer-events-auto">
         <div class="text-[11px] font-bold text-secondary uppercase tracking-wider px-3 py-1 mb-1">Knowledge & Guides</div>
         <div class="space-y-1">
-          <a href="index.html#news" class="flex items-start gap-3 p-2.5 min-h-[44px] rounded-xl hover:bg-surface-container-low transition group/item">
+          <a href="blog.html" class="flex items-start gap-3 p-2.5 min-h-[44px] rounded-xl hover:bg-surface-container-low transition group/item">
             <div class="w-8 h-8 rounded-lg bg-secondary/10 text-secondary flex items-center justify-center flex-shrink-0 group-hover/item:bg-secondary group-hover/item:text-white transition-colors">
               <span class="material-symbols-outlined text-base">newspaper</span>
             </div>
@@ -229,7 +229,7 @@
   <div class="py-2 border-b border-outline-variant/20">
     <div class="text-xs font-bold text-secondary uppercase tracking-wider px-3 py-1.5 mb-1">Resources</div>
     <div class="space-y-1">
-      <a class="min-h-[44px] flex items-center gap-3 px-3 py-2.5 rounded-xl text-on-surface-variant hover:text-secondary active:bg-surface-container-low transition-all text-sm" href="index.html#news">
+      <a class="min-h-[44px] flex items-center gap-3 px-3 py-2.5 rounded-xl text-on-surface-variant hover:text-secondary active:bg-surface-container-low transition-all text-sm" href="blog.html">
         <span class="material-symbols-outlined text-lg text-secondary flex-shrink-0">newspaper</span>
         <span>Blog / News</span>
       </a>
