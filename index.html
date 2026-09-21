@@ -30,7 +30,7 @@
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&amp;family=Montserrat:wght@600;700&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+
 <script id="tailwind-config">
         tailwind.config = {
             darkMode: "class",
@@ -126,6 +126,22 @@
         }
     </script>
 <style>
+        .material-symbols-outlined {
+            font-family: 'Material Symbols Outlined';
+            font-weight: normal;
+            font-style: normal;
+            font-size: 24px;
+            line-height: 1;
+            letter-spacing: normal;
+            text-transform: none;
+            display: inline-block;
+            white-space: nowrap;
+            word-wrap: normal;
+            direction: ltr;
+            -webkit-font-feature-settings: 'liga';
+            -webkit-font-smoothing: antialiased;
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
         .glass-panel {
             background: rgba(255, 255, 255, 0.85);
             backdrop-filter: blur(12px);
@@ -259,7 +275,7 @@
   <div class="absolute top-full left-0 mt-1 w-80 bg-white rounded-2xl shadow-2xl border border-outline-variant/60 p-3 opacity-0 invisible translate-y-2 group-hover:opacity-100 group-hover:visible group-hover:translate-y-0 transition-all duration-200 z-50 pointer-events-none group-hover:pointer-events-auto">
     <div class="text-[11px] font-bold text-secondary uppercase tracking-wider px-3 py-1 mb-1">Knowledge & Guides</div>
     <div class="space-y-1">
-      <a href="index.html#news" class="flex items-start gap-3 p-2.5 rounded-xl hover:bg-surface-container-low transition group/item">
+      <a href="blog.html" class="flex items-start gap-3 p-2.5 rounded-xl hover:bg-surface-container-low transition group/item">
         <div class="w-8 h-8 rounded-lg bg-secondary/10 text-secondary flex items-center justify-center flex-shrink-0 group-hover/item:bg-secondary group-hover/item:text-white transition-colors">
           <span class="material-symbols-outlined text-base">newspaper</span>
         </div>
@@ -299,7 +315,7 @@
   </div>
 </div>
 
-<a class="text-on-surface-variant hover:text-secondary font-label-md text-label-md transition-all hover:bg-surface-container-low px-3 py-2 rounded-lg" href="about.html#careers">Careers</a>
+<a class="text-on-surface-variant hover:text-secondary font-label-md text-label-md transition-all hover:bg-surface-container-low px-3 py-2 rounded-lg" href="careers.html">Careers</a>
 <a class="text-on-surface-variant hover:text-secondary font-label-md text-label-md transition-all hover:bg-surface-container-low px-3 py-2 rounded-lg" href="contact.html">Contact</a>
 </div>
 
@@ -340,14 +356,14 @@
   <div class="py-2 border-b border-outline-variant/30">
     <div class="text-xs font-bold text-secondary uppercase tracking-wider mb-2">Resources</div>
     <div class="pl-2 space-y-2 text-sm">
-      <a class="block py-1 text-on-surface-variant hover:text-secondary" href="index.html#news">Blog / News</a>
+      <a class="block py-1 text-on-surface-variant hover:text-secondary" href="blog.html">Blog / News</a>
       <a class="block py-1 text-on-surface-variant hover:text-secondary" href="commercial-industrial-solar.html#tax-benefits">Income Tax Benefits Guide</a>
       <a class="block py-1 text-on-surface-variant hover:text-secondary" href="residential-solar.html#subsidy">Subsidy Scheme Info</a>
       <a class="block py-1 text-on-surface-variant hover:text-secondary" href="contact.html#faq">FAQs</a>
     </div>
   </div>
 
-  <a class="block py-2 text-on-surface-variant hover:text-secondary border-b border-outline-variant/30" href="about.html#careers">Careers</a>
+  <a class="block py-2 text-on-surface-variant hover:text-secondary border-b border-outline-variant/30" href="careers.html">Careers</a>
   <a class="block py-2 text-on-surface-variant hover:text-secondary border-b border-outline-variant/30" href="contact.html">Contact</a>
   <div class="pt-2">
     <a href="contact.html" class="flex items-center justify-center gap-2 w-full bg-primary text-on-primary font-semibold text-sm py-3 rounded-xl hover:bg-primary-container transition-all">
@@ -367,11 +383,11 @@
 </div>
 <main>
 <!-- Hero Section -->
-<section class="relative min-h-[80vh] flex items-center justify-center overflow-hidden">
-<div class="absolute inset-0 bg-cover bg-center w-full h-full" data-alt="A sprawling, high-tech utility-scale solar power plant in India under a bright, clear blue sky. The pristine blue solar panels stretch across the arid landscape, reflecting the intense sunlight. The scene is captured in high resolution with wide-angle perspective, emphasizing scale and clean energy innovation. The lighting is crisp and natural, highlighting the technical precision of the installation against the natural environment." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuD4RKvO4fdBDSOiVPo_J8sdqfIjfU_hmZPeb7ReYf0eVKwYj3sh9lLcav2W8qdrRzDH8YJKphwPPMDnZsNnF5my6RX6ApstoIxLYtYdzppK87wJshqKtWIhExopnHmTXCXHzhnYsNmAdSpprW4mi_oL8qmpkQJeZYcsTkPgAqQ_UeQix-RgogRjYpshJECIwHd5gAXYa_bZJqRmdDegT6pl4ItXbYvPNfem6t2M0F4q8JdKsGlBLo1V')"></div>
-<div class="absolute inset-0 hero-gradient"></div>
+<section class="relative min-h-[80vh] flex items-center justify-center overflow-hidden bg-white">
+<div class="absolute inset-0 bg-cover bg-center" style="background-image:url('/assets/photos/hero-background.jpg')"></div>
+<div class="absolute inset-0 bg-gradient-to-r from-white via-white/90 to-white/40"></div>
 <div class="relative z-10 w-full max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-stack-lg flex flex-col items-center md:items-start text-center md:text-left">
-<div class="glass-panel p-stack-md rounded-xl max-w-3xl animate-[fadeInUp_1s_ease-out]">
+<div class="p-stack-md rounded-xl max-w-3xl animate-[fadeInUp_1s_ease-out]">
 <span class="inline-block bg-secondary-fixed text-on-secondary-fixed font-label-md text-label-md px-3 py-1 rounded-full mb-4">Clean Power Managed with Precision</span>
 <h1 class="font-display-lg text-display-lg text-primary mb-6">
                         Empowering India with <span class="text-secondary">Sustainable Solar</span> Solutions.
@@ -447,7 +463,7 @@
 </div>
 <div class="relative bg-surface-container-lowest/60">
 <div class="solutions-tab-panel active" id="solutions-panel-residential">
-<div class="h-72 md:h-80 bg-cover bg-center" style="background-image:url('https://lh3.googleusercontent.com/aida-public/AB6AXuCaPjMDDBoNLblzCLNhn5bzfT4KFWY4QiwfiSb32Bfwm0EYelx5KOD1I6701WUGh6RWyaigP1RlHMi4HY9WNTPgKDg8udl7KIT6aEbS92VRiSsLTi3Qnn89X9msT8dfJC5roCx5GvAct99Ngo6KSEv50_lVKhVdnbLPbpkhAdUr2XcBwwCGVD8ywyQEt9oSlLwp75Kidi_Didjvtnkrt7mV0U8-8IHN-Rx-K6xnR0bNXpM7fUrbD4Zd')"></div>
+<div class="h-72 md:h-80 bg-cover bg-center" style="background-image:url('/assets/photos/residential-rooftop-tiles.jpg')"></div>
 <div class="p-6">
 <h3 class="font-headline-md text-headline-md text-primary mb-2">Residential Rooftop Solar</h3>
 <p class="text-sm text-on-surface-variant mb-4">Smart, accessible solar installations for modern homes, reducing bills and carbon footprints with full PM Surya Ghar subsidy paperwork handled for you.</p>
@@ -455,7 +471,7 @@
 </div>
 </div>
 <div class="solutions-tab-panel" id="solutions-panel-commercial">
-<div class="h-72 md:h-80 bg-cover bg-center" style="background-image:url('https://lh3.googleusercontent.com/aida/AP1WRLvUDJB6UX7Mvindw2J2aBlohrZJn-77UK-af4_nCXvpQRjWFS9kWNSY0C8FKvgkE4VsQy1Qk9LS5r3fWUqvEA4HztXPLM5GtH_a-c5kC3ThtHwkn9FRKHluiQRc4R3F4q3qa4VcLUCfgfaTT17gUCc1hqOLX68tbnh8URKdpkp0tR197K1VjNtsDkGISZ2zdXIKuhgKV_i1uvOHP2xMDSMIAGaF-opAQ6sOmoH1inIqyAc72GD4MMYWG6I')"></div>
+<div class="h-72 md:h-80 bg-cover bg-center" style="background-image:url('/assets/photos/commercial-rooftop.jpg')"></div>
 <div class="p-6">
 <h3 class="font-headline-md text-headline-md text-primary mb-2">Commercial &amp; Industrial EPC</h3>
 <p class="text-sm text-on-surface-variant mb-4">End-to-end engineering, procurement, and construction for factories, mills, and hospitals, with 40% accelerated depreciation and 3-4 year payback.</p>
@@ -463,7 +479,7 @@
 </div>
 </div>
 <div class="solutions-tab-panel" id="solutions-panel-canopies">
-<div class="h-72 md:h-80 bg-cover bg-center" style="background-image:url('/assets/site-images/canopy-real.jpg')"></div>
+<div class="h-72 md:h-80 bg-cover bg-center" style="background-image:url('/assets/photos/solar-carport-mall.jpg')"></div>
 <div class="p-6">
 <h3 class="font-headline-md text-headline-md text-primary mb-2">Solar Canopies &amp; Carports</h3>
 <p class="text-sm text-on-surface-variant mb-4">Dual-purpose elevated structures that turn parking areas into shaded power generators, with integrated EV charging.</p>
@@ -471,7 +487,7 @@
 </div>
 </div>
 <div class="solutions-tab-panel" id="solutions-panel-openaccess">
-<div class="h-72 md:h-80 bg-cover bg-center" style="background-image:url('/assets/site-images/scenic-generated.jpg')"></div>
+<div class="h-72 md:h-80 bg-cover bg-center" style="background-image:url('/assets/photos/open-access-industrial.jpg')"></div>
 <div class="p-6">
 <h3 class="font-headline-md text-headline-md text-primary mb-2">Open Access &amp; Group Captive PPA</h3>
 <p class="text-sm text-on-surface-variant mb-4">For high-HT industrial consumers across Tamil Nadu seeking 30-50% savings on TANGEDCO and TNEB tariffs.</p>
@@ -479,10 +495,10 @@
 </div>
 </div>
 <div class="solutions-tab-panel" id="solutions-panel-utility">
-<div class="h-72 md:h-80 bg-cover bg-center" style="background-image:url('/assets/site-images/commercial-drone.jpg')"></div>
+<div class="h-72 md:h-80 bg-cover bg-center" style="background-image:url('/assets/photos/utility-scale-farm.jpg')"></div>
 <div class="p-6">
 <h3 class="font-headline-md text-headline-md text-primary mb-2">Utility-Scale Solar Power Plants</h3>
-<p class="text-sm text-on-surface-variant mb-4">MW-scale turnkey EPC from land contouring and TNEB substation evacuation to civil mounting and SCADA monitoring.</p>
+<p class="text-sm text-on-surface-variant mb-4">MW-scale complete EPC from land contouring and TNEB substation evacuation to civil mounting and SCADA monitoring.</p>
 <a class="text-secondary font-label-md text-label-md flex items-center gap-1 w-fit" href="utility-scale-solar.html">Learn More <span class="material-symbols-outlined text-sm">arrow_right_alt</span></a>
 </div>
 </div>
@@ -530,7 +546,7 @@
 </div>
 </div>
 <div class="lg:w-1/2 mt-8 lg:mt-0 relative rounded-xl overflow-hidden shadow-sm border border-outline-variant">
-<div class="bg-cover bg-center w-full h-[400px]" data-alt="A modern rooftop solar panel installation under clear skies in Tamil Nadu." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCaPjMDDBoNLblzCLNhn5bzfT4KFWY4QiwfiSb32Bfwm0EYelx5KOD1I6701WUGh6RWyaigP1RlHMi4HY9WNTPgKDg8udl7KIT6aEbS92VRiSsLTi3Qnn89X9msT8dfJC5roCx5GvAct99Ngo6KSEv50_lVKhVdnbLPbpkhAdUr2XcBwwCGVD8ywyQEt9oSlLwp75Kidi_Didjvtnkrt7mV0U8-8IHN-Rx-K6xnR0bNXpM7fUrbD4Zd')"></div>
+<div class="bg-cover bg-center w-full h-[400px]" data-alt="SolarQube Energy team installing a rooftop solar panel." style="background-image: url('/assets/photos/team-panel-install.jpg')"></div>
 <div class="absolute bottom-4 left-4 right-4 glass-panel p-4 rounded-lg flex items-center justify-between">
 <div>
 <p class="font-label-md text-label-md text-primary font-semibold">Residential & Commercial Quality</p>
@@ -556,7 +572,7 @@
 <!-- Project Card 1: Residential 1 -->
 <div class="bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow border border-outline-variant/30 group reveal delay-100 flex flex-col">
 <div class="h-64 overflow-hidden relative">
-<img alt="Residential Rooftop Solar in Jalakandapuram, Salem" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-in-out" src="https://lh3.googleusercontent.com/aida/AP1WRLtM81bdGm_xKq5PdWBSNSS1QsLVAVJi9rkzWCXU2f3n2CW-izRilV0CdUbAnul-zz8ABn-2KMHd7_qb3TQLgZPcV3Poa3YYkzYl1qkE77HR3B9deOoy_Ad3QH80qKsuvIk9Mc-VRXY1qL_Vfn8MuvJoGvvR8UPjvV6RUhSGtvNP82-KiDNYFURdhC9OWbQmxJ-CMhbVrSfMnLhp2j_I5clfoINCGxZNi8D1WpcI2RHB7tCQ0Es5FE5Dcw"/>
+<img alt="Residential Rooftop Solar in Jalakandapuram, Salem" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-in-out" src="/assets/projects/gnanavel.jpg"/>
 <span class="absolute top-3 left-3 bg-secondary text-white text-xs font-bold px-2.5 py-1 rounded-full shadow-sm">Residential</span>
 </div>
 <div class="p-6 flex flex-col flex-grow">
@@ -575,7 +591,7 @@
 <!-- Project Card 2: Residential 2 -->
 <div class="bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow border border-outline-variant/30 group reveal delay-200 flex flex-col">
 <div class="h-64 overflow-hidden relative">
-<img alt="Residential Solar Installation in Tharamangalam, Salem" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-in-out" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCaPjMDDBoNLblzCLNhn5bzfT4KFWY4QiwfiSb32Bfwm0EYelx5KOD1I6701WUGh6RWyaigP1RlHMi4HY9WNTPgKDg8udl7KIT6aEbS92VRiSsLTi3Qnn89X9msT8dfJC5roCx5GvAct99Ngo6KSEv50_lVKhVdnbLPbpkhAdUr2XcBwwCGVD8ywyQEt9oSlLwp75Kidi_Didjvtnkrt7mV0U8-8IHN-Rx-K6xnR0bNXpM7fUrbD4Zd"/>
+<img alt="Residential Solar Installation in Tharamangalam, Salem" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-in-out" src="/assets/projects/kumar-c.jpg"/>
 <span class="absolute top-3 left-3 bg-secondary text-white text-xs font-bold px-2.5 py-1 rounded-full shadow-sm">Residential</span>
 </div>
 <div class="p-6 flex flex-col flex-grow">
@@ -594,7 +610,7 @@
 <!-- Project Card 3: Commercial 1 (Erode) -->
 <div class="bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow border border-outline-variant/30 group reveal delay-300 flex flex-col">
 <div class="h-64 overflow-hidden relative">
-<img alt="Commercial Solar Installation in Erode" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-in-out" src="https://lh3.googleusercontent.com/aida/AP1WRLvUDJB6UX7Mvindw2J2aBlohrZJn-77UK-af4_nCXvpQRjWFS9kWNSY0C8FKvgkE4VsQy1Qk9LS5r3fWUqvEA4HztXPLM5GtH_a-c5kC3ThtHwkn9FRKHluiQRc4R3F4q3qa4VcLUCfgfaTT17gUCc1hqOLX68tbnh8URKdpkp0tR197K1VjNtsDkGISZ2zdXIKuhgKV_i1uvOHP2xMDSMIAGaF-opAQ6sOmoH1inIqyAc72GD4MMYWG6I"/>
+<img alt="Commercial Solar Installation in Erode" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-in-out" src="/assets/photos/project-erode-18kw.jpg"/>
 <span class="absolute top-3 left-3 bg-primary text-white text-xs font-bold px-2.5 py-1 rounded-full shadow-sm">Commercial</span>
 </div>
 <div class="p-6 flex flex-col flex-grow">
@@ -603,7 +619,7 @@
 <span class="material-symbols-outlined text-sm text-secondary">location_on</span>
 <span class="font-label-md text-label-md">Erode, Tamil Nadu</span>
 </div>
-<p class="text-sm text-on-surface-variant mb-4 flex-grow">Turnkey commercial solar installation powering textile & processing machinery, cutting peak power tariffs and unlocking 40% tax depreciation.</p>
+<p class="text-sm text-on-surface-variant mb-4 flex-grow">Complete commercial solar installation powering textile & processing machinery, cutting peak power tariffs and unlocking 40% tax depreciation.</p>
 <a class="text-secondary font-label-md text-label-md flex items-center gap-1 group-hover:gap-2 transition-all mt-auto" href="commercial-industrial-solar.html">
             View Details <span class="material-symbols-outlined text-sm">arrow_right_alt</span>
 </a>
@@ -626,19 +642,19 @@ Active Solar Projects in: <span class="text-secondary font-bold">Salem • Erode
 <div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
 <div class="text-center mb-stack-lg">
 <span class="inline-block bg-secondary-fixed text-on-secondary-fixed font-label-md text-label-md px-3 py-1 rounded-full mb-3">Guides & News</span>
-<h2 class="font-headline-lg text-headline-lg text-primary mb-4">Latest from SolarQube (2026)</h2>
+<h2 class="font-headline-lg text-headline-lg text-primary mb-4">Latest from SolarQube</h2>
 <p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto">Simple guides and helpful updates to make your switch to solar easy and rewarding.</p>
 </div>
 <div class="border-t border-outline-variant">
-<a class="group flex flex-col sm:flex-row sm:items-baseline gap-2 sm:gap-6 py-6 border-b border-outline-variant hover:bg-surface-container-low transition-colors px-2 -mx-2" href="residential-solar.html#subsidy">
+<a class="group flex flex-col sm:flex-row sm:items-baseline gap-2 sm:gap-6 py-6 border-b border-outline-variant hover:bg-surface-container-low transition-colors px-2 -mx-2" href="blog.html#pm-surya-ghar">
 <span class="text-xs font-bold text-secondary w-full sm:w-32 shrink-0">Subsidy Guide</span>
 <div class="flex-1 min-w-0">
-<h3 class="font-headline-md text-headline-md text-primary group-hover:text-secondary transition-colors">PM Surya Ghar Subsidy 2026: Get Up to ₹78,000 for Your Home</h3>
+<h3 class="font-headline-md text-headline-md text-primary group-hover:text-secondary transition-colors">PM Surya Ghar Subsidy: Get Up to ₹78,000 for Your Home</h3>
 <p class="text-sm text-on-surface-variant mt-1">How homeowners in Salem, Erode, and Tamil Nadu can claim direct bank subsidies and reduce their power bills to zero.</p>
 </div>
 <span class="text-xs text-on-surface-variant shrink-0 hidden sm:block">2026</span>
 </a>
-<a class="group flex flex-col sm:flex-row sm:items-baseline gap-2 sm:gap-6 py-6 border-b border-outline-variant hover:bg-surface-container-low transition-colors px-2 -mx-2" href="commercial-industrial-solar.html">
+<a class="group flex flex-col sm:flex-row sm:items-baseline gap-2 sm:gap-6 py-6 border-b border-outline-variant hover:bg-surface-container-low transition-colors px-2 -mx-2" href="blog.html#commercial-solar">
 <span class="text-xs font-bold text-secondary w-full sm:w-32 shrink-0">Commercial Solar</span>
 <div class="flex-1 min-w-0">
 <h3 class="font-headline-md text-headline-md text-primary group-hover:text-secondary transition-colors">Solar for Erode &amp; Salem Industries: Cut Operating Costs</h3>
@@ -646,13 +662,19 @@ Active Solar Projects in: <span class="text-secondary font-bold">Salem • Erode
 </div>
 <span class="text-xs text-on-surface-variant shrink-0 hidden sm:block">2026</span>
 </a>
-<a class="group flex flex-col sm:flex-row sm:items-baseline gap-2 sm:gap-6 py-6 border-b border-outline-variant hover:bg-surface-container-low transition-colors px-2 -mx-2" href="contact.html#faq">
+<a class="group flex flex-col sm:flex-row sm:items-baseline gap-2 sm:gap-6 py-6 border-b border-outline-variant hover:bg-surface-container-low transition-colors px-2 -mx-2" href="blog.html#net-metering">
 <span class="text-xs font-bold text-secondary w-full sm:w-32 shrink-0">Net Metering</span>
 <div class="flex-1 min-w-0">
-<h3 class="font-headline-md text-headline-md text-primary group-hover:text-secondary transition-colors">How TANGEDCO Net Metering Works in Tamil Nadu (2026)</h3>
+<h3 class="font-headline-md text-headline-md text-primary group-hover:text-secondary transition-colors">How TANGEDCO Net Metering Works in Tamil Nadu</h3>
 <p class="text-sm text-on-surface-variant mt-1">Step-by-step process of bi-directional solar metering, export credit adjustments, and TANGEDCO application procedures.</p>
 </div>
 <span class="text-xs text-on-surface-variant shrink-0 hidden sm:block">2026</span>
+</a>
+</div>
+<div class="mt-8">
+<a class="inline-flex items-center gap-2 text-secondary font-semibold text-sm hover:underline" href="blog.html">
+<span>Read all guides</span>
+<span class="material-symbols-outlined text-base">arrow_forward</span>
 </a>
 </div>
 </div>
@@ -740,10 +762,10 @@ Active Solar Projects in: <span class="text-secondary font-bold">Salem • Erode
     <!-- Brand Info & Social -->
     <div class="lg:w-1/3">
       <a class="flex items-center gap-2 mb-4 inline-block" href="index.html">
-        <img alt="SolarQube Energy" class="h-12 w-auto object-contain" src="/assets/logo/solarqube-logo-white.png"/>
+        <img alt="SolarQube Energy" class="h-12 w-auto object-contain" src="/assets/logo/solarqube-logo.jpg"/>
       </a>
       <p class="font-body-md text-body-md text-on-primary/80 max-w-sm mb-6 leading-relaxed">
-        SolarQube Energy delivers turnkey solar EPC solutions for homes, businesses, and industrial facilities across Salem, Jalakandapuram, Erode, and Tharamangalam.
+        SolarQube Energy delivers complete solar EPC solutions for homes, businesses, and industrial facilities across Salem, Jalakandapuram, Erode, and Tharamangalam.
       </p>
       
       <!-- Social Media Links (Icons) -->
@@ -770,7 +792,7 @@ Active Solar Projects in: <span class="text-secondary font-bold">Salem • Erode
       <div>
         <h4 class="font-label-md text-label-md font-bold mb-4 text-[#8f91d8] uppercase tracking-wider text-sm">Quick Links</h4>
         <ul class="space-y-2.5">
-          <li><a class="font-body-md text-body-md text-on-primary/80 hover:text-[#7b7dff] transition-colors" href="about.html">About Us</a></li>
+          <li><a class="font-body-md text-body-md text-on-primary/80 hover:text-[#7b7dff] transition-colors" href="about.html">About Us</a></li><li><a class="font-body-md text-body-md text-on-primary/80 hover:text-[#7b7dff] transition-colors" href="careers.html">Careers</a></li>
           <li><a class="font-body-md text-body-md text-on-primary/80 hover:text-[#7b7dff] transition-colors" href="residential-solar.html">Residential Solar</a></li>
           <li><a class="font-body-md text-body-md text-on-primary/80 hover:text-[#7b7dff] transition-colors" href="commercial-industrial-solar.html">Commercial & Industrial</a></li>
           <li><a class="font-body-md text-body-md text-on-primary/80 hover:text-[#7b7dff] transition-colors" href="solar-canopies-carports.html">Solar Canopies</a></li>

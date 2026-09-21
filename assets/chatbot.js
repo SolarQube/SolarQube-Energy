@@ -396,11 +396,27 @@
     }
   });
 
-  // Scroll to bottom helper
+  // Scroll to bottom helper - uses double requestAnimationFrame to guarantee
+  // the browser has finished layout/paint for newly added content (including
+  // dynamically-sized chip buttons) before measuring scrollHeight, which a
+  // fixed setTimeout delay could miss.
   function scrollToBottom() {
-    setTimeout(() => {
-      messagesList.scrollTop = messagesList.scrollHeight;
-    }, 50);
+    requestAnimationFrame(() => {
+      requestAnimationFrame(() => {
+        messagesList.scrollTop = messagesList.scrollHeight;
+      });
+    });
+  }
+
+  // Safety net: auto-scroll whenever the messages list actually changes,
+  // regardless of which code path triggered the change. This catches cases
+  // where a new message, chip, or attachment preview is added without an
+  // explicit scrollToBottom() call.
+  if (typeof MutationObserver !== "undefined" && messagesList) {
+    const scrollObserver = new MutationObserver(() => {
+      scrollToBottom();
+    });
+    scrollObserver.observe(messagesList, { childList: true, subtree: true });
   }
 
   // Render Bot Message

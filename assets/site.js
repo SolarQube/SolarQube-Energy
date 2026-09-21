@@ -403,6 +403,8 @@ function initSavingsCalculator() {
   const subsidyDeductionOutput = document.getElementById('calc-subsidy-deduction');
   const netCostOutput = document.getElementById('calc-net-cost');
   const paybackOutput = document.getElementById('calc-payback-years');
+  const billCutBadge = document.getElementById('calc-bill-cut-badge');
+  const roiBadge = document.getElementById('calc-roi-badge');
   
   const shadingDropdown = document.getElementById('calc-shading-dropdown');
   const shadingFactorLabel = document.getElementById('calc-shading-factor-label');
@@ -496,12 +498,16 @@ function initSavingsCalculator() {
       annualSavings = Math.round(monthlySavings * 12);
     }
 
+    const effectiveCutPercent = Math.round(offsetFactor * shadingFactor * 100);
+
     // Step 5: Payback period calculation with strict divide-by-zero & NaN / Infinity validation
     let paybackYearsDisplay = 'N/A (Bill is ₹0)';
+    let paybackYearsNumeric = null;
     if (monthlyBill > 0 && annualSavings > 0 && netCost > 0) {
       const rawPayback = netCost / annualSavings;
       if (Number.isFinite(rawPayback) && !isNaN(rawPayback) && rawPayback > 0) {
         paybackYearsDisplay = `~${rawPayback.toFixed(1)} Years`;
+        paybackYearsNumeric = rawPayback;
       } else {
         paybackYearsDisplay = 'N/A';
       }
@@ -538,6 +544,29 @@ function initSavingsCalculator() {
     }
     if (paybackOutput) {
       paybackOutput.textContent = paybackYearsDisplay;
+    }
+    if (billCutBadge) {
+      billCutBadge.textContent = monthlyBill > 0 ? `~${effectiveCutPercent}% Bill Cut` : 'N/A';
+    }
+    if (roiBadge) {
+      roiBadge.classList.remove(
+        'bg-secondary/10', 'text-secondary',
+        'bg-emerald-100', 'text-emerald-700',
+        'bg-amber-100', 'text-amber-800'
+      );
+      if (paybackYearsNumeric === null) {
+        roiBadge.textContent = 'N/A';
+        roiBadge.classList.add('bg-amber-100', 'text-amber-800');
+      } else if (paybackYearsNumeric <= 4) {
+        roiBadge.textContent = 'Fast ROI';
+        roiBadge.classList.add('bg-emerald-100', 'text-emerald-700');
+      } else if (paybackYearsNumeric <= 6) {
+        roiBadge.textContent = 'Good ROI';
+        roiBadge.classList.add('bg-secondary/10', 'text-secondary');
+      } else {
+        roiBadge.textContent = 'Standard ROI';
+        roiBadge.classList.add('bg-amber-100', 'text-amber-800');
+      }
     }
   }
 
