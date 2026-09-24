@@ -400,7 +400,9 @@ function initSavingsCalculator() {
   const monthlySavingsOutput = document.getElementById('calc-monthly-savings');
   const annualSavingsOutput = document.getElementById('calc-annual-savings');
   const grossCostOutput = document.getElementById('calc-gross-cost');
-  const subsidyDeductionOutput = document.getElementById('calc-subsidy-deduction');
+  const subsidyCentralOutput = document.getElementById('calc-subsidy-central');
+  const subsidyStateOutput = document.getElementById('calc-subsidy-state');
+  const subsidyTotalOutput = document.getElementById('calc-subsidy-total');
   const netCostOutput = document.getElementById('calc-net-cost');
   const paybackOutput = document.getElementById('calc-payback-years');
   const billCutBadge = document.getElementById('calc-bill-cut-badge');
@@ -454,7 +456,7 @@ function initSavingsCalculator() {
       grossCost = 150000;
     } else if (monthlyBill <= 7000) {
       systemSizeKw = 3;
-      grossCost = 200000;
+      grossCost = 220000;
     } else if (monthlyBill <= 9000) {
       systemSizeKw = 4;
       grossCost = 250000;
@@ -468,15 +470,21 @@ function initSavingsCalculator() {
       grossCost = 300000 + (stepsAbove * 50000);
     }
 
-    // Step 2: Apply government subsidy (PM Surya Ghar: Muft Bijli Yojana)
-    let subsidyAmount = 0;
+    // Step 2: Apply government subsidy — PM Surya Ghar (Central) + Tamil Nadu State top-up (TN Solar Homes Portal)
+    // Slabs per official scheme: 1kW ₹30k+₹5k | 2kW ₹60k+₹10k | 3kW & above ₹78k+₹22k (both capped at 3kW)
+    let centralSubsidy = 0;
+    let stateSubsidy = 0;
     if (systemSizeKw === 1) {
-      subsidyAmount = 30000;
+      centralSubsidy = 30000;
+      stateSubsidy = 5000;
     } else if (systemSizeKw === 2) {
-      subsidyAmount = 60000;
+      centralSubsidy = 60000;
+      stateSubsidy = 10000;
     } else {
-      subsidyAmount = 78000; // Capped at ₹78,000 for 3 kW and above
+      centralSubsidy = 78000; // Capped at ₹78,000 for 3 kW and above
+      stateSubsidy = 22000;   // Capped at ₹22,000 for 3 kW and above
     }
+    const subsidyAmount = centralSubsidy + stateSubsidy;
 
     const netCost = Math.max(0, grossCost - subsidyAmount);
 
@@ -536,8 +544,14 @@ function initSavingsCalculator() {
     if (grossCostOutput) {
       grossCostOutput.textContent = `₹${grossCost.toLocaleString('en-IN')}`;
     }
-    if (subsidyDeductionOutput) {
-      subsidyDeductionOutput.textContent = `- ₹${subsidyAmount.toLocaleString('en-IN')}`;
+    if (subsidyCentralOutput) {
+      subsidyCentralOutput.textContent = `- ₹${centralSubsidy.toLocaleString('en-IN')}`;
+    }
+    if (subsidyStateOutput) {
+      subsidyStateOutput.textContent = `- ₹${stateSubsidy.toLocaleString('en-IN')}`;
+    }
+    if (subsidyTotalOutput) {
+      subsidyTotalOutput.textContent = `- ₹${subsidyAmount.toLocaleString('en-IN')}`;
     }
     if (netCostOutput) {
       netCostOutput.textContent = `₹${netCost.toLocaleString('en-IN')}`;

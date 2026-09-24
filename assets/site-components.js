@@ -148,7 +148,7 @@
             </div>
             <div>
               <div class="font-label-md text-label-md font-semibold text-primary group-hover/item:text-secondary transition-colors">Subsidy Scheme Info</div>
-              <div class="text-[11px] text-on-surface-variant leading-tight mt-0.5">PM Surya Ghar Muft Bijli Yojana subsidy slabs.</div>
+              <div class="text-[11px] text-on-surface-variant leading-tight mt-0.5">PM Surya Ghar + TN State subsidy slabs (up to ₹1,00,000).</div>
             </div>
           </a>
           <a href="contact.html#faq" class="flex items-start gap-3 p-2.5 min-h-[44px] rounded-xl hover:bg-surface-container-low transition group/item">
@@ -272,7 +272,7 @@ ${showBanner ? `
   <a class="flex items-center justify-center gap-2 group hover:opacity-90 transition-all text-center min-h-[44px]" href="residential-solar.html#subsidy">
     <span class="material-symbols-outlined text-body-md font-bold">info</span>
     <p class="font-label-md text-label-md font-bold">
-      PM Surya Ghar Subsidy Scheme — <span class="underline decoration-2 underline-offset-2 animate-subtle-pulse">Check Your Eligibility &amp; Calculate Savings (Up to ₹78,000)</span>
+      PM Surya Ghar + TN State Subsidy — <span class="underline decoration-2 underline-offset-2 animate-subtle-pulse">Check Your Eligibility &amp; Calculate Savings (Up to ₹1,00,000)</span>
       <span class="material-symbols-outlined text-sm inline-block align-middle group-hover:translate-x-1 transition-transform">arrow_forward</span>
     </p>
   </a>
