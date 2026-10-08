@@ -15,6 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initSectorTabs();
   initContactForms();
   initProjectCarousel();
+  initWhatsAppFloat();
 });
 
 // Dynamic Copyright Year Updater - sets the current year dynamically in .copyright-year spans
@@ -100,27 +101,39 @@ function initMobileMenu() {
   const mobileToggleBtns = document.querySelectorAll('#mobile-nav-toggle-btn, [aria-label="Toggle navigation menu"]');
 
   if (mobileNavPanel) {
+    const setMenuState = (open) => {
+      mobileNavPanel.classList.toggle('hidden', !open);
+      mobileToggleBtns.forEach(btn => {
+        btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+        const icon = btn.querySelector('.material-symbols-outlined');
+        if (icon) icon.textContent = open ? 'close' : 'menu';
+      });
+    };
+    setMenuState(false);
+
+    // Single toggle handler (no inline onclick in markup, so it can't double-fire)
     mobileToggleBtns.forEach(btn => {
       btn.addEventListener('click', (e) => {
         e.stopPropagation();
-        mobileNavPanel.classList.toggle('hidden');
+        setMenuState(mobileNavPanel.classList.contains('hidden'));
       });
     });
 
     // Close when clicking any link inside the mobile panel
-    const panelLinks = mobileNavPanel.querySelectorAll('a');
-    panelLinks.forEach(link => {
-      link.addEventListener('click', () => {
-        mobileNavPanel.classList.add('hidden');
-      });
+    mobileNavPanel.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => setMenuState(false));
     });
 
     // Close when clicking outside
     document.addEventListener('click', (e) => {
       if (!mobileNavPanel.contains(e.target) && !Array.from(mobileToggleBtns).some(btn => btn.contains(e.target))) {
-        mobileNavPanel.classList.add('hidden');
+        setMenuState(false);
       }
     });
+
+    // Close on Escape, and when the viewport grows to the desktop nav (>=1024px)
+    document.addEventListener('keydown', (e) => { if (e.key === 'Escape') setMenuState(false); });
+    window.matchMedia('(min-width: 1024px)').addEventListener('change', (e) => { if (e.matches) setMenuState(false); });
   }
 
   // Support side drawer if present (#mobile-menu-drawer)
@@ -400,7 +413,9 @@ function initSavingsCalculator() {
   const monthlySavingsOutput = document.getElementById('calc-monthly-savings');
   const annualSavingsOutput = document.getElementById('calc-annual-savings');
   const grossCostOutput = document.getElementById('calc-gross-cost');
-  const subsidyDeductionOutput = document.getElementById('calc-subsidy-deduction');
+  const subsidyCentralOutput = document.getElementById('calc-subsidy-central');
+  const subsidyStateOutput = document.getElementById('calc-subsidy-state');
+  const subsidyTotalOutput = document.getElementById('calc-subsidy-total');
   const netCostOutput = document.getElementById('calc-net-cost');
   const paybackOutput = document.getElementById('calc-payback-years');
   const billCutBadge = document.getElementById('calc-bill-cut-badge');
@@ -454,7 +469,7 @@ function initSavingsCalculator() {
       grossCost = 150000;
     } else if (monthlyBill <= 7000) {
       systemSizeKw = 3;
-      grossCost = 200000;
+      grossCost = 220000;
     } else if (monthlyBill <= 9000) {
       systemSizeKw = 4;
       grossCost = 250000;
@@ -468,15 +483,21 @@ function initSavingsCalculator() {
       grossCost = 300000 + (stepsAbove * 50000);
     }
 
-    // Step 2: Apply government subsidy (PM Surya Ghar: Muft Bijli Yojana)
-    let subsidyAmount = 0;
+    // Step 2: Apply government subsidy — PM Surya Ghar (Central) + Tamil Nadu State top-up (TN Solar Homes Portal)
+    // Slabs per official scheme: 1kW ₹30k+₹5k | 2kW ₹60k+₹10k | 3kW & above ₹78k+₹22k (both capped at 3kW)
+    let centralSubsidy = 0;
+    let stateSubsidy = 0;
     if (systemSizeKw === 1) {
-      subsidyAmount = 30000;
+      centralSubsidy = 30000;
+      stateSubsidy = 5000;
     } else if (systemSizeKw === 2) {
-      subsidyAmount = 60000;
+      centralSubsidy = 60000;
+      stateSubsidy = 10000;
     } else {
-      subsidyAmount = 78000; // Capped at ₹78,000 for 3 kW and above
+      centralSubsidy = 78000; // Capped at ₹78,000 for 3 kW and above
+      stateSubsidy = 22000;   // Capped at ₹22,000 for 3 kW and above
     }
+    const subsidyAmount = centralSubsidy + stateSubsidy;
 
     const netCost = Math.max(0, grossCost - subsidyAmount);
 
@@ -536,8 +557,14 @@ function initSavingsCalculator() {
     if (grossCostOutput) {
       grossCostOutput.textContent = `₹${grossCost.toLocaleString('en-IN')}`;
     }
-    if (subsidyDeductionOutput) {
-      subsidyDeductionOutput.textContent = `- ₹${subsidyAmount.toLocaleString('en-IN')}`;
+    if (subsidyCentralOutput) {
+      subsidyCentralOutput.textContent = `- ₹${centralSubsidy.toLocaleString('en-IN')}`;
+    }
+    if (subsidyStateOutput) {
+      subsidyStateOutput.textContent = `- ₹${stateSubsidy.toLocaleString('en-IN')}`;
+    }
+    if (subsidyTotalOutput) {
+      subsidyTotalOutput.textContent = `- ₹${subsidyAmount.toLocaleString('en-IN')}`;
     }
     if (netCostOutput) {
       netCostOutput.textContent = `₹${netCost.toLocaleString('en-IN')}`;
@@ -1290,3 +1317,20 @@ function initProjectCarousel() {
   });
 }
 
+
+
+// 10. Floating WhatsApp button (replaces the old AI Quote chat widget)
+function initWhatsAppFloat() {
+  if (document.getElementById('sq-whatsapp-float')) return;
+  const link = document.createElement('a');
+  link.id = 'sq-whatsapp-float';
+  link.href = 'https://wa.me/918883663001?text=Hi%20SolarQube%2C%20I%20would%20like%20to%20know%20more%20about%20solar%20solutions.';
+  link.target = '_blank';
+  link.rel = 'noopener noreferrer';
+  link.setAttribute('aria-label', 'Chat with SolarQube on WhatsApp');
+  link.style.cssText = 'position:fixed;right:20px;bottom:20px;z-index:60;width:58px;height:58px;border-radius:9999px;background:#25D366;display:flex;align-items:center;justify-content:center;box-shadow:0 8px 24px rgba(0,0,0,0.25);transition:transform .2s ease;';
+  link.onmouseenter = () => { link.style.transform = 'scale(1.08)'; };
+  link.onmouseleave = () => { link.style.transform = 'scale(1)'; };
+  link.innerHTML = '<svg viewBox="0 0 24 24" width="32" height="32" fill="#fff" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>';
+  document.body.appendChild(link);
+}
