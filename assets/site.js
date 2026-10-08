@@ -101,27 +101,39 @@ function initMobileMenu() {
   const mobileToggleBtns = document.querySelectorAll('#mobile-nav-toggle-btn, [aria-label="Toggle navigation menu"]');
 
   if (mobileNavPanel) {
+    const setMenuState = (open) => {
+      mobileNavPanel.classList.toggle('hidden', !open);
+      mobileToggleBtns.forEach(btn => {
+        btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+        const icon = btn.querySelector('.material-symbols-outlined');
+        if (icon) icon.textContent = open ? 'close' : 'menu';
+      });
+    };
+    setMenuState(false);
+
+    // Single toggle handler (no inline onclick in markup, so it can't double-fire)
     mobileToggleBtns.forEach(btn => {
       btn.addEventListener('click', (e) => {
         e.stopPropagation();
-        mobileNavPanel.classList.toggle('hidden');
+        setMenuState(mobileNavPanel.classList.contains('hidden'));
       });
     });
 
     // Close when clicking any link inside the mobile panel
-    const panelLinks = mobileNavPanel.querySelectorAll('a');
-    panelLinks.forEach(link => {
-      link.addEventListener('click', () => {
-        mobileNavPanel.classList.add('hidden');
-      });
+    mobileNavPanel.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => setMenuState(false));
     });
 
     // Close when clicking outside
     document.addEventListener('click', (e) => {
       if (!mobileNavPanel.contains(e.target) && !Array.from(mobileToggleBtns).some(btn => btn.contains(e.target))) {
-        mobileNavPanel.classList.add('hidden');
+        setMenuState(false);
       }
     });
+
+    // Close on Escape, and when the viewport grows to the desktop nav (>=1024px)
+    document.addEventListener('keydown', (e) => { if (e.key === 'Escape') setMenuState(false); });
+    window.matchMedia('(min-width: 1024px)').addEventListener('change', (e) => { if (e.matches) setMenuState(false); });
   }
 
   // Support side drawer if present (#mobile-menu-drawer)
