@@ -7,16 +7,18 @@
 
   var LEAD_ENDPOINT = 'https://script.google.com/macros/s/AKfycbx-xMAlZCUy090KGFfA74LHx4vWe2mG_97cesrjQysyncgZc2mB9VVEpZ4kvJo7Bn7Spg/exec';
 
+  function showInlineSuccess() {
+    var msg = document.getElementById('form-success-msg');
+    if (!msg) return;
+    msg.classList.remove('hidden');
+    if (msg.scrollIntoView) msg.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  }
+
   var SUCCESS = {
     'contact-enquiry-form': function () { window.location.href = 'thank-you.html'; },
     'home-enquiry-form': function () { window.location.href = 'thank-you.html'; },
-    'open-access-form': function () {
-      alert('Thank you! Our Open Access & PPA specialists will review your HT power profile and contact you within 24 hours.');
-    },
-    'carport-assessment-form': function (form) {
-      var msg = document.getElementById('form-success-msg');
-      if (msg) msg.classList.remove('hidden');
-    }
+    'open-access-form': function () { showInlineSuccess(); },
+    'carport-assessment-form': function () { showInlineSuccess(); }
   };
 
   function configured() {

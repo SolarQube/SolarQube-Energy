@@ -27,7 +27,7 @@
 <link rel="icon" type="image/png" href="/assets/logo/solarqube-favicon.png" />
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&amp;family=Montserrat:wght@600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
 <link rel="stylesheet" href="/assets/site.css" />
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
@@ -73,14 +73,24 @@
           "stack-md": "24px"
         },
         fontFamily: {
-          "headline-lg-mobile": ["Montserrat", "sans-serif"],
-          "display-lg": ["Montserrat", "sans-serif"],
-          "label-md": ["Inter", "sans-serif"],
-          "headline-md": ["Montserrat", "sans-serif"],
-          "caption": ["Inter", "sans-serif"],
-          "headline-lg": ["Montserrat", "sans-serif"],
-          "body-md": ["Inter", "sans-serif"],
-          "body-lg": ["Inter", "sans-serif"]
+          "headline-lg-mobile": ["Plus Jakarta Sans", "sans-serif"],
+          "display-lg": ["Plus Jakarta Sans", "sans-serif"],
+          "label-md": ["Plus Jakarta Sans", "sans-serif"],
+          "headline-md": ["Plus Jakarta Sans", "sans-serif"],
+          "caption": ["Plus Jakarta Sans", "sans-serif"],
+          "headline-lg": ["Plus Jakarta Sans", "sans-serif"],
+          "body-md": ["Plus Jakarta Sans", "sans-serif"],
+          "body-lg": ["Plus Jakarta Sans", "sans-serif"]
+        },
+        fontSize: {
+          "caption": ["12px", { "lineHeight": "16px", "fontWeight": "400" }],
+          "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+          "headline-lg": ["32px", { "lineHeight": "40px", "fontWeight": "600" }],
+          "headline-lg-mobile": ["28px", { "lineHeight": "36px", "fontWeight": "600" }],
+          "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+          "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+          "label-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "500" }],
+          "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "600" }]
         }
       }
     }
@@ -1122,6 +1132,10 @@
               <span>Generate My Open Access Feasibility Plan</span>
               <span class="material-symbols-outlined text-lg">arrow_forward</span>
             </button>
+
+            <div id="form-success-msg" class="hidden p-4 rounded-xl bg-emerald-50 border border-emerald-200 text-emerald-800 text-sm text-center" role="status" aria-live="polite">
+              <strong>Thank you!</strong> Your open access feasibility plan request has been received. Our engineering team will contact you within 24 hours.
+            </div>
           </form>
         </div>
 
