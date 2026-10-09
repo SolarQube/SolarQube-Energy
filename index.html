@@ -688,13 +688,14 @@ Active Solar Projects in: <span class="text-secondary font-bold">Salem • Erode
 <div class="bg-surface-container-lowest p-stack-md rounded-xl shadow-sm border border-outline-variant">
 <h2 class="font-headline-lg text-headline-lg text-primary mb-2">Get a Free Solar Quote</h2>
 <p class="text-sm text-on-surface-variant mb-6">Send us your details and our solar engineer will contact you for a free rooftop assessment.</p>
-<form class="space-y-4" id="home-enquiry-form">
+<form data-lead-form="Home page quote request" class="space-y-4" id="home-enquiry-form">
+<input type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;opacity:0;height:0;width:0;"/>
 <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-<input class="w-full p-3 rounded-lg border border-outline-variant bg-surface focus:border-secondary outline-none transition-all text-sm" placeholder="Your Name" type="text" required/>
-<input class="w-full p-3 rounded-lg border border-outline-variant bg-surface focus:border-secondary outline-none transition-all text-sm" placeholder="Phone Number" type="tel" required/>
+<input name="name" class="w-full p-3 rounded-lg border border-outline-variant bg-surface focus:border-secondary outline-none transition-all text-sm" placeholder="Your Name" type="text" required/>
+<input name="phone" class="w-full p-3 rounded-lg border border-outline-variant bg-surface focus:border-secondary outline-none transition-all text-sm" placeholder="Phone Number" type="tel" required/>
 </div>
-<input class="w-full p-3 rounded-lg border border-outline-variant bg-surface focus:border-secondary outline-none transition-all text-sm" placeholder="Email Address (Optional)" type="email"/>
-<select class="w-full p-3 rounded-lg border border-outline-variant bg-surface focus:border-secondary outline-none transition-all text-sm" required>
+<input name="email" class="w-full p-3 rounded-lg border border-outline-variant bg-surface focus:border-secondary outline-none transition-all text-sm" placeholder="Email Address (Optional)" type="email"/>
+<select name="interest" class="w-full p-3 rounded-lg border border-outline-variant bg-surface focus:border-secondary outline-none transition-all text-sm" required>
 <option disabled="" selected="" value="">Select Solution</option>
 <option value="residential">Residential Rooftop Solar (PM Surya Ghar Subsidy)</option>
 <option value="commercial">Commercial & Industrial Solar (EPC + AMC)</option>
@@ -702,7 +703,7 @@ Active Solar Projects in: <span class="text-secondary font-bold">Salem • Erode
 <option value="open-access">Power Trading (Open Access / PPA)</option>
 <option value="utility">Utility-Scale Solar (MW Projects)</option>
 </select>
-<textarea class="w-full p-3 rounded-lg border border-outline-variant bg-surface focus:border-secondary outline-none transition-all text-sm" placeholder="Your Location (Salem, Erode, Tharamangalam, etc.) or Monthly Electricity Bill" rows="3"></textarea>
+<textarea name="message" class="w-full p-3 rounded-lg border border-outline-variant bg-surface focus:border-secondary outline-none transition-all text-sm" placeholder="Your Location (Salem, Erode, Tharamangalam, etc.) or Monthly Electricity Bill" rows="3"></textarea>
 <button class="w-full bg-primary text-on-primary font-label-md text-label-md py-3.5 rounded-full hover:bg-primary-container transition-all active:scale-95 shadow-md btn-shimmer font-semibold" type="submit">Submit Free Quote Request</button>
 </form>
 </div>
@@ -914,4 +915,5 @@ Active Solar Projects in: <span class="text-secondary font-bold">Salem • Erode
     </script>
     <script src="/assets/site-components.js"></script>
     <script src="/assets/site.js"></script>
+<script src="/assets/lead-form.js"></script>
     </body></html>

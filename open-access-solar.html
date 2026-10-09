@@ -1081,40 +1081,41 @@
           <h3 class="text-xl sm:text-2xl font-bold font-display-lg text-primary mb-2">Request Free PPA Feasibility Report</h3>
           <p class="text-xs sm:text-sm text-on-surface-variant mb-6">Receive your customized per-unit savings projection within 24 business hours.</p>
 
-          <form class="space-y-4" onsubmit="event.preventDefault(); alert('Thank you! Our Open Access & PPA specialists will review your HT power profile and contact you within 24 hours.');">
+          <form id="open-access-form" data-lead-form="Open Access / PPA plan" class="space-y-4">
+<input type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;opacity:0;height:0;width:0;"/>
             
             <div>
               <label class="block text-xs font-semibold text-primary mb-1" for="oa-company">Company / Facility Name *</label>
-              <input class="w-full bg-surface-container-lowest border border-outline-variant/60 rounded-xl px-4 py-3 text-sm focus:border-secondary focus:ring-1 focus:ring-secondary focus:outline-none transition-all" id="oa-company" placeholder="e.g. Sri Lakshmi Textiles Pvt Ltd" type="text" required/>
+              <input name="company" class="w-full bg-surface-container-lowest border border-outline-variant/60 rounded-xl px-4 py-3 text-sm focus:border-secondary focus:ring-1 focus:ring-secondary focus:outline-none transition-all" id="oa-company" placeholder="e.g. Sri Lakshmi Textiles Pvt Ltd" type="text" required/>
             </div>
 
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div>
                 <label class="block text-xs font-semibold text-primary mb-1" for="oa-load">Sanctioned HT Load (kVA / kW) *</label>
-                <input class="w-full bg-surface-container-lowest border border-outline-variant/60 rounded-xl px-4 py-3 text-sm focus:border-secondary focus:ring-1 focus:ring-secondary focus:outline-none transition-all" id="oa-load" placeholder="e.g. 1000 kVA" type="text" required/>
+                <input name="ht_load" class="w-full bg-surface-container-lowest border border-outline-variant/60 rounded-xl px-4 py-3 text-sm focus:border-secondary focus:ring-1 focus:ring-secondary focus:outline-none transition-all" id="oa-load" placeholder="e.g. 1000 kVA" type="text" required/>
               </div>
 
               <div>
                 <label class="block text-xs font-semibold text-primary mb-1" for="oa-units">Monthly Power Consumption (Units) *</label>
-                <input class="w-full bg-surface-container-lowest border border-outline-variant/60 rounded-xl px-4 py-3 text-sm focus:border-secondary focus:ring-1 focus:ring-secondary focus:outline-none transition-all" id="oa-units" placeholder="e.g. 1,50,000 units" type="text" required/>
+                <input name="monthly_units" class="w-full bg-surface-container-lowest border border-outline-variant/60 rounded-xl px-4 py-3 text-sm focus:border-secondary focus:ring-1 focus:ring-secondary focus:outline-none transition-all" id="oa-units" placeholder="e.g. 1,50,000 units" type="text" required/>
               </div>
             </div>
 
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div>
                 <label class="block text-xs font-semibold text-primary mb-1" for="oa-phone">Contact Phone Number *</label>
-                <input class="w-full bg-surface-container-lowest border border-outline-variant/60 rounded-xl px-4 py-3 text-sm focus:border-secondary focus:ring-1 focus:ring-secondary focus:outline-none transition-all" id="oa-phone" placeholder="+91 98765 43210" type="tel" required/>
+                <input name="phone" class="w-full bg-surface-container-lowest border border-outline-variant/60 rounded-xl px-4 py-3 text-sm focus:border-secondary focus:ring-1 focus:ring-secondary focus:outline-none transition-all" id="oa-phone" placeholder="+91 98765 43210" type="tel" required/>
               </div>
 
               <div>
                 <label class="block text-xs font-semibold text-primary mb-1" for="oa-email">Official Work Email *</label>
-                <input class="w-full bg-surface-container-lowest border border-outline-variant/60 rounded-xl px-4 py-3 text-sm focus:border-secondary focus:ring-1 focus:ring-secondary focus:outline-none transition-all" id="oa-email" placeholder="management@company.in" type="email" required/>
+                <input name="email" class="w-full bg-surface-container-lowest border border-outline-variant/60 rounded-xl px-4 py-3 text-sm focus:border-secondary focus:ring-1 focus:ring-secondary focus:outline-none transition-all" id="oa-email" placeholder="management@company.in" type="email" required/>
               </div>
             </div>
 
             <div>
               <label class="block text-xs font-semibold text-primary mb-1" for="oa-location">Facility Location / State *</label>
-              <input class="w-full bg-surface-container-lowest border border-outline-variant/60 rounded-xl px-4 py-3 text-sm focus:border-secondary focus:ring-1 focus:ring-secondary focus:outline-none transition-all" id="oa-location" placeholder="e.g. Chennai, Tamil Nadu" type="text" required/>
+              <input name="location" class="w-full bg-surface-container-lowest border border-outline-variant/60 rounded-xl px-4 py-3 text-sm focus:border-secondary focus:ring-1 focus:ring-secondary focus:outline-none transition-all" id="oa-location" placeholder="e.g. Chennai, Tamil Nadu" type="text" required/>
             </div>
 
             <button class="w-full mt-3 bg-secondary hover:bg-primary text-white font-bold text-sm sm:text-base py-4 rounded-xl transition-all shadow-lg hover:shadow-xl active:scale-95 flex items-center justify-center gap-2" type="submit">
@@ -1219,5 +1220,6 @@
 
 <script src="/assets/site-components.js"></script>
 <script src="/assets/site.js"></script>
+<script src="/assets/lead-form.js"></script>
 </body>
 </html>
