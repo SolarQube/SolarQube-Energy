@@ -227,25 +227,148 @@ input[type=range]::-moz-range-thumb:hover {
 }
 
 body {
-  font-size: 16px;
+  font-size: 18px;
   line-height: 1.6;
   font-feature-settings: 'cv11', 'ss01';
 }
 
 h1, h2, h3, h4 { letter-spacing: -0.02em; font-weight: 700 !important; }
 
-h1 { font-size: 30px !important; line-height: 38px !important; }
-h2 { font-size: 26px !important; line-height: 34px !important; }
-h3 { font-size: 20px !important; line-height: 28px !important; letter-spacing: -0.01em; }
-h4 { font-size: 14px !important; line-height: 20px !important; letter-spacing: 0.05em; }
+h1 { font-size: 32px !important; line-height: 40px !important; }
+h2 { font-size: 28px !important; line-height: 36px !important; }
+h3 { font-size: 22px !important; line-height: 30px !important; letter-spacing: -0.01em; }
+h4 { font-size: 16px !important; line-height: 22px !important; letter-spacing: 0.05em; }
 
 @media (min-width: 768px) {
-  h1 { font-size: 48px !important; line-height: 56px !important; }
-  h2 { font-size: 34px !important; line-height: 42px !important; }
+  h1 { font-size: 50px !important; line-height: 58px !important; }
+  h2 { font-size: 36px !important; line-height: 44px !important; }
 }
 
-/* tiny arbitrary sizes -> the standard 12px caption size */
-.text-\[10px\], .text-\[11px\], .sm\:text-\[11px\] {
-  font-size: 12px !important;
-  line-height: 16px !important;
+
+/* ===== FONT SCALE (+2px): text-size classes on non-heading text, incl. responsive variants.
+   Headings (h1-h4) follow the heading scale above. ===== */
+.text-xs:not(h1):not(h2):not(h3):not(h4){font-size:14px!important;line-height:20px!important}
+.text-sm:not(h1):not(h2):not(h3):not(h4){font-size:16px!important;line-height:24px!important}
+.text-base:not(h1):not(h2):not(h3):not(h4){font-size:18px!important;line-height:28px!important}
+.text-lg:not(h1):not(h2):not(h3):not(h4){font-size:20px!important;line-height:30px!important}
+.text-xl:not(h1):not(h2):not(h3):not(h4){font-size:22px!important;line-height:30px!important}
+.text-2xl:not(h1):not(h2):not(h3):not(h4){font-size:26px!important;line-height:34px!important}
+.text-3xl:not(h1):not(h2):not(h3):not(h4){font-size:32px!important;line-height:40px!important}
+.text-4xl:not(h1):not(h2):not(h3):not(h4){font-size:38px!important;line-height:44px!important}
+.text-5xl:not(h1):not(h2):not(h3):not(h4){font-size:50px!important;line-height:56px!important}
+.text-6xl:not(h1):not(h2):not(h3):not(h4){font-size:62px!important;line-height:68px!important}
+.text-caption:not(h1):not(h2):not(h3):not(h4){font-size:14px!important;line-height:20px!important}
+.text-label-md:not(h1):not(h2):not(h3):not(h4){font-size:16px!important;line-height:22px!important}
+.text-body-md:not(h1):not(h2):not(h3):not(h4){font-size:18px!important;line-height:28px!important}
+.text-body-lg:not(h1):not(h2):not(h3):not(h4){font-size:20px!important;line-height:30px!important}
+.text-headline-md:not(h1):not(h2):not(h3):not(h4){font-size:26px!important;line-height:34px!important}
+.text-headline-lg-mobile:not(h1):not(h2):not(h3):not(h4){font-size:30px!important;line-height:38px!important}
+.text-headline-lg:not(h1):not(h2):not(h3):not(h4){font-size:34px!important;line-height:42px!important}
+.text-display-lg:not(h1):not(h2):not(h3):not(h4){font-size:50px!important;line-height:58px!important}
+.text-\[10px\]:not(h1):not(h2):not(h3):not(h4){font-size:14px!important;line-height:20px!important}
+.text-\[11px\]:not(h1):not(h2):not(h3):not(h4){font-size:14px!important;line-height:20px!important}
+.text-\[52px\]:not(h1):not(h2):not(h3):not(h4){font-size:54px!important;line-height:60px!important}
+@media (min-width:640px){
+.sm\:text-xs:not(h1):not(h2):not(h3):not(h4){font-size:14px!important;line-height:20px!important}
+.sm\:text-sm:not(h1):not(h2):not(h3):not(h4){font-size:16px!important;line-height:24px!important}
+.sm\:text-base:not(h1):not(h2):not(h3):not(h4){font-size:18px!important;line-height:28px!important}
+.sm\:text-lg:not(h1):not(h2):not(h3):not(h4){font-size:20px!important;line-height:30px!important}
+.sm\:text-xl:not(h1):not(h2):not(h3):not(h4){font-size:22px!important;line-height:30px!important}
+.sm\:text-2xl:not(h1):not(h2):not(h3):not(h4){font-size:26px!important;line-height:34px!important}
+.sm\:text-3xl:not(h1):not(h2):not(h3):not(h4){font-size:32px!important;line-height:40px!important}
+.sm\:text-4xl:not(h1):not(h2):not(h3):not(h4){font-size:38px!important;line-height:44px!important}
+.sm\:text-5xl:not(h1):not(h2):not(h3):not(h4){font-size:50px!important;line-height:56px!important}
+.sm\:text-6xl:not(h1):not(h2):not(h3):not(h4){font-size:62px!important;line-height:68px!important}
+.sm\:text-caption:not(h1):not(h2):not(h3):not(h4){font-size:14px!important;line-height:20px!important}
+.sm\:text-label-md:not(h1):not(h2):not(h3):not(h4){font-size:16px!important;line-height:22px!important}
+.sm\:text-body-md:not(h1):not(h2):not(h3):not(h4){font-size:18px!important;line-height:28px!important}
+.sm\:text-body-lg:not(h1):not(h2):not(h3):not(h4){font-size:20px!important;line-height:30px!important}
+.sm\:text-headline-md:not(h1):not(h2):not(h3):not(h4){font-size:26px!important;line-height:34px!important}
+.sm\:text-headline-lg-mobile:not(h1):not(h2):not(h3):not(h4){font-size:30px!important;line-height:38px!important}
+.sm\:text-headline-lg:not(h1):not(h2):not(h3):not(h4){font-size:34px!important;line-height:42px!important}
+.sm\:text-display-lg:not(h1):not(h2):not(h3):not(h4){font-size:50px!important;line-height:58px!important}
+.sm\:text-\[10px\]:not(h1):not(h2):not(h3):not(h4){font-size:14px!important;line-height:20px!important}
+.sm\:text-\[11px\]:not(h1):not(h2):not(h3):not(h4){font-size:14px!important;line-height:20px!important}
+.sm\:text-\[52px\]:not(h1):not(h2):not(h3):not(h4){font-size:54px!important;line-height:60px!important}
+}
+@media (min-width:768px){
+.md\:text-xs:not(h1):not(h2):not(h3):not(h4){font-size:14px!important;line-height:20px!important}
+.md\:text-sm:not(h1):not(h2):not(h3):not(h4){font-size:16px!important;line-height:24px!important}
+.md\:text-base:not(h1):not(h2):not(h3):not(h4){font-size:18px!important;line-height:28px!important}
+.md\:text-lg:not(h1):not(h2):not(h3):not(h4){font-size:20px!important;line-height:30px!important}
+.md\:text-xl:not(h1):not(h2):not(h3):not(h4){font-size:22px!important;line-height:30px!important}
+.md\:text-2xl:not(h1):not(h2):not(h3):not(h4){font-size:26px!important;line-height:34px!important}
+.md\:text-3xl:not(h1):not(h2):not(h3):not(h4){font-size:32px!important;line-height:40px!important}
+.md\:text-4xl:not(h1):not(h2):not(h3):not(h4){font-size:38px!important;line-height:44px!important}
+.md\:text-5xl:not(h1):not(h2):not(h3):not(h4){font-size:50px!important;line-height:56px!important}
+.md\:text-6xl:not(h1):not(h2):not(h3):not(h4){font-size:62px!important;line-height:68px!important}
+.md\:text-caption:not(h1):not(h2):not(h3):not(h4){font-size:14px!important;line-height:20px!important}
+.md\:text-label-md:not(h1):not(h2):not(h3):not(h4){font-size:16px!important;line-height:22px!important}
+.md\:text-body-md:not(h1):not(h2):not(h3):not(h4){font-size:18px!important;line-height:28px!important}
+.md\:text-body-lg:not(h1):not(h2):not(h3):not(h4){font-size:20px!important;line-height:30px!important}
+.md\:text-headline-md:not(h1):not(h2):not(h3):not(h4){font-size:26px!important;line-height:34px!important}
+.md\:text-headline-lg-mobile:not(h1):not(h2):not(h3):not(h4){font-size:30px!important;line-height:38px!important}
+.md\:text-headline-lg:not(h1):not(h2):not(h3):not(h4){font-size:34px!important;line-height:42px!important}
+.md\:text-display-lg:not(h1):not(h2):not(h3):not(h4){font-size:50px!important;line-height:58px!important}
+.md\:text-\[10px\]:not(h1):not(h2):not(h3):not(h4){font-size:14px!important;line-height:20px!important}
+.md\:text-\[11px\]:not(h1):not(h2):not(h3):not(h4){font-size:14px!important;line-height:20px!important}
+.md\:text-\[52px\]:not(h1):not(h2):not(h3):not(h4){font-size:54px!important;line-height:60px!important}
+}
+@media (min-width:1024px){
+.lg\:text-xs:not(h1):not(h2):not(h3):not(h4){font-size:14px!important;line-height:20px!important}
+.lg\:text-sm:not(h1):not(h2):not(h3):not(h4){font-size:16px!important;line-height:24px!important}
+.lg\:text-base:not(h1):not(h2):not(h3):not(h4){font-size:18px!important;line-height:28px!important}
+.lg\:text-lg:not(h1):not(h2):not(h3):not(h4){font-size:20px!important;line-height:30px!important}
+.lg\:text-xl:not(h1):not(h2):not(h3):not(h4){font-size:22px!important;line-height:30px!important}
+.lg\:text-2xl:not(h1):not(h2):not(h3):not(h4){font-size:26px!important;line-height:34px!important}
+.lg\:text-3xl:not(h1):not(h2):not(h3):not(h4){font-size:32px!important;line-height:40px!important}
+.lg\:text-4xl:not(h1):not(h2):not(h3):not(h4){font-size:38px!important;line-height:44px!important}
+.lg\:text-5xl:not(h1):not(h2):not(h3):not(h4){font-size:50px!important;line-height:56px!important}
+.lg\:text-6xl:not(h1):not(h2):not(h3):not(h4){font-size:62px!important;line-height:68px!important}
+.lg\:text-caption:not(h1):not(h2):not(h3):not(h4){font-size:14px!important;line-height:20px!important}
+.lg\:text-label-md:not(h1):not(h2):not(h3):not(h4){font-size:16px!important;line-height:22px!important}
+.lg\:text-body-md:not(h1):not(h2):not(h3):not(h4){font-size:18px!important;line-height:28px!important}
+.lg\:text-body-lg:not(h1):not(h2):not(h3):not(h4){font-size:20px!important;line-height:30px!important}
+.lg\:text-headline-md:not(h1):not(h2):not(h3):not(h4){font-size:26px!important;line-height:34px!important}
+.lg\:text-headline-lg-mobile:not(h1):not(h2):not(h3):not(h4){font-size:30px!important;line-height:38px!important}
+.lg\:text-headline-lg:not(h1):not(h2):not(h3):not(h4){font-size:34px!important;line-height:42px!important}
+.lg\:text-display-lg:not(h1):not(h2):not(h3):not(h4){font-size:50px!important;line-height:58px!important}
+.lg\:text-\[10px\]:not(h1):not(h2):not(h3):not(h4){font-size:14px!important;line-height:20px!important}
+.lg\:text-\[11px\]:not(h1):not(h2):not(h3):not(h4){font-size:14px!important;line-height:20px!important}
+.lg\:text-\[52px\]:not(h1):not(h2):not(h3):not(h4){font-size:54px!important;line-height:60px!important}
+}
+@media (min-width:1280px){
+.xl\:text-xs:not(h1):not(h2):not(h3):not(h4){font-size:14px!important;line-height:20px!important}
+.xl\:text-sm:not(h1):not(h2):not(h3):not(h4){font-size:16px!important;line-height:24px!important}
+.xl\:text-base:not(h1):not(h2):not(h3):not(h4){font-size:18px!important;line-height:28px!important}
+.xl\:text-lg:not(h1):not(h2):not(h3):not(h4){font-size:20px!important;line-height:30px!important}
+.xl\:text-xl:not(h1):not(h2):not(h3):not(h4){font-size:22px!important;line-height:30px!important}
+.xl\:text-2xl:not(h1):not(h2):not(h3):not(h4){font-size:26px!important;line-height:34px!important}
+.xl\:text-3xl:not(h1):not(h2):not(h3):not(h4){font-size:32px!important;line-height:40px!important}
+.xl\:text-4xl:not(h1):not(h2):not(h3):not(h4){font-size:38px!important;line-height:44px!important}
+.xl\:text-5xl:not(h1):not(h2):not(h3):not(h4){font-size:50px!important;line-height:56px!important}
+.xl\:text-6xl:not(h1):not(h2):not(h3):not(h4){font-size:62px!important;line-height:68px!important}
+.xl\:text-caption:not(h1):not(h2):not(h3):not(h4){font-size:14px!important;line-height:20px!important}
+.xl\:text-label-md:not(h1):not(h2):not(h3):not(h4){font-size:16px!important;line-height:22px!important}
+.xl\:text-body-md:not(h1):not(h2):not(h3):not(h4){font-size:18px!important;line-height:28px!important}
+.xl\:text-body-lg:not(h1):not(h2):not(h3):not(h4){font-size:20px!important;line-height:30px!important}
+.xl\:text-headline-md:not(h1):not(h2):not(h3):not(h4){font-size:26px!important;line-height:34px!important}
+.xl\:text-headline-lg-mobile:not(h1):not(h2):not(h3):not(h4){font-size:30px!important;line-height:38px!important}
+.xl\:text-headline-lg:not(h1):not(h2):not(h3):not(h4){font-size:34px!important;line-height:42px!important}
+.xl\:text-display-lg:not(h1):not(h2):not(h3):not(h4){font-size:50px!important;line-height:58px!important}
+.xl\:text-\[10px\]:not(h1):not(h2):not(h3):not(h4){font-size:14px!important;line-height:20px!important}
+.xl\:text-\[11px\]:not(h1):not(h2):not(h3):not(h4){font-size:14px!important;line-height:20px!important}
+.xl\:text-\[52px\]:not(h1):not(h2):not(h3):not(h4){font-size:54px!important;line-height:60px!important}
+}
+
+/* ===== Header fit: keeps the larger font from overflowing the nav bar ===== */
+#navbar .text-label-md { font-size: 15px !important; line-height: 20px !important; }
+#navbar .px-3\.5 { padding-left: 10px !important; padding-right: 10px !important; }
+@media (min-width: 1024px) and (max-width: 1259px) {
+  #navbar .hidden.lg\:flex { display: none !important; }
+  #navbar button.lg\:hidden { display: inline-flex !important; }
+  #mobile-nav-panel:not(.hidden) { display: block !important; }
+}
+@media (min-width: 1260px) and (max-width: 1365px) {
+  #navbar > div { padding-left: 24px !important; padding-right: 24px !important; }
 }

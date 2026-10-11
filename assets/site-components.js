@@ -63,7 +63,7 @@
 <nav class="bg-surface-container-lowest full-width top-0 sticky z-50 border-b border-outline-variant shadow-sm transition-colors duration-300" id="navbar">
 <div class="flex justify-between items-center w-full px-margin-mobile md:px-margin-desktop py-2.5 sm:py-3 max-w-container-max mx-auto">
   <a class="flex items-center gap-2 flex-shrink-0 min-h-[44px] py-1" href="index.html" aria-label="SolarQube Home">
-    <img alt="SolarQube Energy" class="h-10 sm:h-11 w-auto object-contain" src="/assets/logo/solarqube-logo.png"/>
+    <img width="364" height="96" alt="SolarQube Energy - Solar Company in Salem, Tamil Nadu" class="h-10 sm:h-11 w-auto object-contain" src="/assets/logo/solarqube-logo-sm.png"/>
   </a>
 
   <!-- Desktop Navigation -->
@@ -307,10 +307,10 @@ ${showBanner ? `
     <!-- Brand Info & Social -->
     <div class="lg:w-1/3">
       <a class="flex items-center gap-2 mb-4 inline-block min-h-[44px]" href="index.html" aria-label="SolarQube Home">
-        <img alt="SolarQube Energy" class="h-12 w-auto object-contain" src="/assets/logo/solarqube-logo.jpg"/>
+        <img width="394" height="104" alt="SolarQube Energy - Solar Company in Salem, Tamil Nadu" class="h-12 w-auto object-contain" src="/assets/logo/solarqube-logo-sm.jpg"/>
       </a>
       <p class="font-body-md text-body-md text-on-primary/80 max-w-sm mb-6 leading-relaxed">
-        SolarQube Energy delivers complete solar EPC solutions for homes, businesses, and industrial facilities across Jalakandapuram, Salem, Erode, Tharamangalam, and surrounding areas.
+        SolarQube Energy is a solar company in Salem, Tamil Nadu delivering complete solar EPC solutions for homes, businesses, and industrial facilities across Jalakandapuram, Salem, Erode, Tharamangalam, and surrounding areas.
       </p>
       <p class="font-caption text-caption text-on-primary/60">© <span class="copyright-year">${currentYear}</span> SolarQube Energy. All Rights Reserved.</p>
     </div>
@@ -330,6 +330,9 @@ ${showBanner ? `
           <li><a class="font-body-md text-body-md text-on-primary/80 hover:text-[#7b7dff] transition-colors min-h-[44px] inline-flex items-center py-2 ${active === 'utility' ? 'text-white font-bold' : ''}" href="utility-scale-solar.html">Utility Scale</a></li>
           <li><a class="font-body-md text-body-md text-on-primary/80 hover:text-[#7b7dff] transition-colors min-h-[44px] inline-flex items-center py-2 ${active === 'projects' ? 'text-white font-bold' : ''}" href="projects.html">Projects</a></li>
           <li><a class="font-body-md text-body-md text-on-primary/80 hover:text-[#7b7dff] transition-colors min-h-[44px] inline-flex items-center py-2 ${active === 'contact' ? 'text-white font-bold' : ''}" href="contact.html">Contact Us</a></li>
+          <li><a class="font-body-md text-body-md text-on-primary/80 hover:text-[#7b7dff] transition-colors min-h-[44px] inline-flex items-center py-2 ${active === 'contact' ? 'text-white font-bold' : ''}" href="solar-company-salem.html">Solar Company in Salem</a></li>
+          <li><a class="font-body-md text-body-md text-on-primary/80 hover:text-[#7b7dff] transition-colors min-h-[44px] inline-flex items-center py-2 ${active === 'contact' ? 'text-white font-bold' : ''}" href="solar-company-erode.html">Solar Company in Erode</a></li>
+          <li><a class="font-body-md text-body-md text-on-primary/80 hover:text-[#7b7dff] transition-colors min-h-[44px] inline-flex items-center py-2 ${active === 'contact' ? 'text-white font-bold' : ''}" href="solar-installation-tharamangalam.html">Solar in Tharamangalam</a></li>
         </ul>
       </div>
 
