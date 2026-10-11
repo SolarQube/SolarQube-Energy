@@ -13,6 +13,7 @@
     if (pathname.includes('residential-solar')) return 'residential';
     if (pathname.includes('commercial-industrial-solar')) return 'commercial';
     if (pathname.includes('solar-canopies-carports')) return 'canopies';
+    if (pathname.includes('battery-storage')) return 'bess';
     if (pathname.includes('open-access-solar')) return 'open-access';
     if (pathname.includes('utility-scale-solar')) return 'utility';
     if (pathname.includes('projects')) return 'projects';
@@ -35,7 +36,7 @@
     const isAbout = active === 'about';
     const isProjects = active === 'projects';
     const isContact = active === 'contact';
-    const isSolutions = ['residential', 'commercial', 'canopies', 'open-access', 'utility'].includes(active);
+    const isSolutions = ['residential', 'commercial', 'bess', 'canopies', 'open-access', 'utility'].includes(active);
 
     const homeClass = isHome 
       ? 'text-secondary font-bold border-b-2 border-secondary pb-1 font-label-md text-label-md px-3.5 py-2.5 min-h-[44px] inline-flex items-center transition-all' 
@@ -90,6 +91,12 @@
               <span class="material-symbols-outlined text-lg">factory</span>
             </div>
             <div class="font-label-md text-label-md ${active === 'commercial' ? 'text-secondary font-bold' : 'font-semibold text-primary group-hover/item:text-secondary'} transition-colors">Commercial & Industrial</div>
+          </a>
+          <a href="battery-storage-bess.html" class="flex items-center gap-3 p-2.5 min-h-[44px] rounded-xl ${active === 'bess' ? 'bg-surface-container-low font-bold' : 'hover:bg-surface-container-low'} transition group/item">
+            <div class="w-9 h-9 rounded-lg ${active === 'bess' ? 'bg-secondary text-white' : 'bg-secondary/10 text-secondary group-hover/item:bg-secondary group-hover/item:text-white'} flex items-center justify-center flex-shrink-0 transition-colors">
+              <span class="material-symbols-outlined text-lg">battery_charging_full</span>
+            </div>
+            <div class="font-label-md text-label-md ${active === 'bess' ? 'text-secondary font-bold' : 'font-semibold text-primary group-hover/item:text-secondary'} transition-colors">Battery Storage (BESS)</div>
           </a>
           <a href="solar-canopies-carports.html" class="flex items-center gap-3 p-2.5 min-h-[44px] rounded-xl ${active === 'canopies' ? 'bg-surface-container-low font-bold' : 'hover:bg-surface-container-low'} transition group/item">
             <div class="w-9 h-9 rounded-lg ${active === 'canopies' ? 'bg-secondary text-white' : 'bg-secondary/10 text-secondary group-hover/item:bg-secondary group-hover/item:text-white'} flex items-center justify-center flex-shrink-0 transition-colors">

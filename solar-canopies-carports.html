@@ -29,7 +29,7 @@
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@600;700;800&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
 
 <!-- Tailwind Config -->
@@ -106,14 +106,14 @@
                     "margin-desktop": "64px"
             },
             "fontFamily": {
-                    "caption": ["Inter"],
-                    "headline-lg": ["Montserrat"],
-                    "display-lg": ["Montserrat"],
-                    "body-lg": ["Inter"],
-                    "body-md": ["Inter"],
-                    "headline-lg-mobile": ["Montserrat"],
-                    "label-md": ["Inter"],
-                    "headline-md": ["Montserrat"]
+                    "caption": ["Plus Jakarta Sans"],
+                    "headline-lg": ["Plus Jakarta Sans"],
+                    "display-lg": ["Plus Jakarta Sans"],
+                    "body-lg": ["Plus Jakarta Sans"],
+                    "body-md": ["Plus Jakarta Sans"],
+                    "headline-lg-mobile": ["Plus Jakarta Sans"],
+                    "label-md": ["Plus Jakarta Sans"],
+                    "headline-md": ["Plus Jakarta Sans"]
             },
             "fontSize": {
                     "caption": ["12px", { "lineHeight": "16px", "fontWeight": "400" }],
@@ -926,36 +926,37 @@
         </p>
       </div>
 
-      <form id="carport-assessment-form" onsubmit="event.preventDefault(); document.getElementById('form-success-msg').classList.remove('hidden'); this.reset();" class="space-y-5">
+      <form data-lead-form="Carport assessment" id="carport-assessment-form" class="space-y-5">
+<input type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;opacity:0;height:0;width:0;"/>
         
         <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
           <div>
             <label class="block text-xs font-bold uppercase tracking-wider text-primary mb-1.5">Company / Organization Name *</label>
-            <input required class="w-full bg-surface-container-low border border-outline-variant/60 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-secondary focus:bg-white transition-all text-primary" placeholder="e.g. ABC Textiles Ltd / Apex Tech Park" type="text"/>
+            <input name="company" required class="w-full bg-surface-container-low border border-outline-variant/60 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-secondary focus:bg-white transition-all text-primary" placeholder="e.g. ABC Textiles Ltd / Apex Tech Park" type="text"/>
           </div>
 
           <div>
             <label class="block text-xs font-bold uppercase tracking-wider text-primary mb-1.5">Contact Person Name *</label>
-            <input required class="w-full bg-surface-container-low border border-outline-variant/60 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-secondary focus:bg-white transition-all text-primary" placeholder="e.g. Ramesh Kumar" type="text"/>
+            <input name="name" required class="w-full bg-surface-container-low border border-outline-variant/60 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-secondary focus:bg-white transition-all text-primary" placeholder="e.g. Ramesh Kumar" type="text"/>
           </div>
         </div>
 
         <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
           <div>
             <label class="block text-xs font-bold uppercase tracking-wider text-primary mb-1.5">Phone Number *</label>
-            <input required class="w-full bg-surface-container-low border border-outline-variant/60 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-secondary focus:bg-white transition-all text-primary" placeholder="+91 98765 43210" type="tel"/>
+            <input name="phone" required class="w-full bg-surface-container-low border border-outline-variant/60 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-secondary focus:bg-white transition-all text-primary" placeholder="+91 98765 43210" type="tel"/>
           </div>
 
           <div>
             <label class="block text-xs font-bold uppercase tracking-wider text-primary mb-1.5">Email Address</label>
-            <input class="w-full bg-surface-container-low border border-outline-variant/60 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-secondary focus:bg-white transition-all text-primary" placeholder="ramesh@company.com" type="email"/>
+            <input name="email" class="w-full bg-surface-container-low border border-outline-variant/60 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-secondary focus:bg-white transition-all text-primary" placeholder="ramesh@company.com" type="email"/>
           </div>
         </div>
 
         <div class="grid grid-cols-1 sm:grid-cols-3 gap-5">
           <div>
             <label class="block text-xs font-bold uppercase tracking-wider text-primary mb-1.5">Estimated Parking Bays</label>
-            <select class="w-full bg-surface-container-low border border-outline-variant/60 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-secondary focus:bg-white transition-all text-primary">
+            <select name="parking_bays" class="w-full bg-surface-container-low border border-outline-variant/60 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-secondary focus:bg-white transition-all text-primary">
               <option>10 – 30 Vehicles</option>
               <option>30 – 100 Vehicles</option>
               <option>100 – 250 Vehicles</option>
@@ -966,12 +967,12 @@
 
           <div>
             <label class="block text-xs font-bold uppercase tracking-wider text-primary mb-1.5">Facility Location / City *</label>
-            <input required class="w-full bg-surface-container-low border border-outline-variant/60 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-secondary focus:bg-white transition-all text-primary" placeholder="e.g. Salem / Erode / Coimbatore" type="text"/>
+            <input name="location" required class="w-full bg-surface-container-low border border-outline-variant/60 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-secondary focus:bg-white transition-all text-primary" placeholder="e.g. Salem / Erode / Coimbatore" type="text"/>
           </div>
 
           <div>
             <label class="block text-xs font-bold uppercase tracking-wider text-primary mb-1.5">EV Charging Requirement</label>
-            <select class="w-full bg-surface-container-low border border-outline-variant/60 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-secondary focus:bg-white transition-all text-primary">
+            <select name="ev_requirement" class="w-full bg-surface-container-low border border-outline-variant/60 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-secondary focus:bg-white transition-all text-primary">
               <option>Yes (AC + DC Fast Chargers)</option>
               <option>Yes (AC Slow Chargers Only)</option>
               <option>Provisioning / Wiring Only</option>
@@ -982,7 +983,7 @@
 
         <div>
           <label class="block text-xs font-bold uppercase tracking-wider text-primary mb-1.5">Additional Site Notes (Optional)</label>
-          <textarea rows="3" class="w-full bg-surface-container-low border border-outline-variant/60 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-secondary focus:bg-white transition-all text-primary" placeholder="Tell us about your ground surface (concrete / asphalt / soil), existing sanctioned load, or clearance height needs..."></textarea>
+          <textarea name="message" rows="3" class="w-full bg-surface-container-low border border-outline-variant/60 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-secondary focus:bg-white transition-all text-primary" placeholder="Tell us about your ground surface (concrete / asphalt / soil), existing sanctioned load, or clearance height needs..."></textarea>
         </div>
 
         <button type="submit" class="w-full bg-primary text-white font-bold py-4 rounded-xl hover:bg-secondary transition-all shadow-md active:scale-98 flex items-center justify-center gap-2">
@@ -1192,5 +1193,6 @@
 
 <script src="/assets/site-components.js"></script>
 <script src="/assets/site.js"></script>
+<script src="/assets/lead-form.js"></script>
 </body>
 </html>
