@@ -1,0 +1,374 @@
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 90px;
+}
+
+/* Viewport Top Scroll Progress Indicator */
+#sq-scroll-progress-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3.5px;
+  background: transparent;
+  z-index: 99999;
+  pointer-events: none;
+}
+
+#sq-scroll-progress-bar {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, #00658d 0%, #29C5F0 65%, #ffb957 100%);
+  box-shadow: 0 0 10px rgba(41, 197, 240, 0.7), 0 0 3px rgba(41, 197, 240, 0.9);
+  transition: width 0.05s linear;
+  border-top-right-radius: 2px;
+  border-bottom-right-radius: 2px;
+}
+
+:root {
+  --sq-navy: #0D1B4C;
+  --sq-navy-dark: #071030;
+  --sq-navy-light: #162664;
+  --sq-cyan: #29C5F0;
+  --sq-cyan-glow: rgba(41, 197, 240, 0.4);
+  --sq-blue: #2E7FBF;
+  --sq-slate: #F4F7FB;
+  --sq-border: #E2E8F0;
+}
+
+body {
+  color: #1E293B;
+  background-color: #FAFCFE;
+  overflow-x: hidden;
+}
+
+
+/* Solar Grid Background Pattern */
+.bg-solar-grid {
+  background-image: 
+    linear-gradient(to right, rgba(13, 27, 76, 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(13, 27, 76, 0.05) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+.bg-solar-grid-dark {
+  background-image: 
+    linear-gradient(to right, rgba(41, 197, 240, 0.08) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(41, 197, 240, 0.08) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+.bg-solar-grid-dense {
+  background-image: 
+    linear-gradient(to right, rgba(41, 197, 240, 0.12) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(41, 197, 240, 0.12) 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+
+/* Glowing Orb Animation */
+@keyframes orbPulse {
+  0% {
+    transform: scale(0.98);
+    filter: drop-shadow(0 0 20px rgba(41, 197, 240, 0.45));
+    opacity: 0.9;
+  }
+  50% {
+    transform: scale(1.04);
+    filter: drop-shadow(0 0 35px rgba(41, 197, 240, 0.8));
+    opacity: 1;
+  }
+  100% {
+    transform: scale(0.98);
+    filter: drop-shadow(0 0 20px rgba(41, 197, 240, 0.45));
+    opacity: 0.9;
+  }
+}
+
+@keyframes orbRotate {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.animate-orb-pulse {
+  animation: orbPulse 5s ease-in-out infinite;
+}
+
+.animate-orb-rotate {
+  animation: orbRotate 28s linear infinite;
+}
+
+/* Subtle Urgency Pulse for CTAs */
+@keyframes ctaGlow {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(41, 197, 240, 0.4); }
+  50% { box-shadow: 0 0 0 8px rgba(41, 197, 240, 0); }
+}
+
+.animate-cta-pulse {
+  animation: ctaGlow 2.8s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* Custom Interactive Card Lift */
+.card-hover-lift {
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.card-hover-lift:hover {
+  transform: translateY(-4px);
+  border-color: #29C5F0;
+  box-shadow: 0 12px 30px -10px rgba(13, 27, 76, 0.12), 0 0 0 1px rgba(41, 197, 240, 0.25);
+}
+
+.card-hover-lift-dark:hover {
+  transform: translateY(-4px);
+  border-color: #29C5F0;
+  box-shadow: 0 16px 36px -10px rgba(0, 0, 0, 0.5), 0 0 20px -5px rgba(41, 197, 240, 0.3);
+}
+
+/* Scroll Reveal States */
+.reveal-on-scroll {
+  opacity: 0;
+  transform: translateY(22px);
+  transition: opacity 0.65s cubic-bezier(0.16, 1, 0.3, 1), transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.reveal-on-scroll.is-revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Stagger Delay Utilities */
+.stagger-1 { transition-delay: 80ms; }
+.stagger-2 { transition-delay: 160ms; }
+.stagger-3 { transition-delay: 240ms; }
+.stagger-4 { transition-delay: 320ms; }
+.stagger-5 { transition-delay: 400ms; }
+
+/* Custom Thin Border Glow */
+.glow-border {
+  position: relative;
+}
+.glow-border::after {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  background: linear-gradient(135deg, rgba(41, 197, 240, 0.6), transparent 60%);
+  border-radius: inherit;
+  z-index: -1;
+  pointer-events: none;
+}
+
+/* Custom Range Slider */
+input[type=range] {
+  -webkit-appearance: none;
+  background: #E2E8F0;
+  height: 8px;
+  border-radius: 9999px;
+  outline: none;
+}
+
+input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: #1b1d3a;
+  border: 3px solid #4a4ce0;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(27, 29, 58, 0.45);
+  transition: transform 0.15s ease;
+}
+
+input[type=range]::-webkit-slider-thumb:hover {
+  transform: scale(1.15);
+}
+
+input[type=range]::-moz-range-thumb {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: #1b1d3a;
+  border: 3px solid #4a4ce0;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(27, 29, 58, 0.45);
+  transition: transform 0.15s ease;
+}
+
+input[type=range]::-moz-range-thumb:hover {
+  transform: scale(1.15);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #0D1B4C;
+}
+::-webkit-scrollbar-thumb {
+  background: #2E7FBF;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #29C5F0;
+}
+
+
+/* =========================================================
+   UNIFIED TYPOGRAPHY  (one font + one size scale, all pages)
+   Edit the values below to change the whole site at once.
+   ========================================================= */
+:root {
+  --sq-font: 'Plus Jakarta Sans', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+}
+
+*:not(.material-symbols-outlined):not(.material-icons) {
+  font-family: var(--sq-font) !important;
+}
+
+body {
+  font-size: 18px;
+  line-height: 1.6;
+  font-feature-settings: 'cv11', 'ss01';
+}
+
+h1, h2, h3, h4 { letter-spacing: -0.02em; font-weight: 700 !important; }
+
+h1 { font-size: 32px !important; line-height: 40px !important; }
+h2 { font-size: 28px !important; line-height: 36px !important; }
+h3 { font-size: 22px !important; line-height: 30px !important; letter-spacing: -0.01em; }
+h4 { font-size: 16px !important; line-height: 22px !important; letter-spacing: 0.05em; }
+
+@media (min-width: 768px) {
+  h1 { font-size: 50px !important; line-height: 58px !important; }
+  h2 { font-size: 36px !important; line-height: 44px !important; }
+}
+
+
+/* ===== FONT SCALE (+2px): text-size classes on non-heading text, incl. responsive variants.
+   Headings (h1-h4) follow the heading scale above. ===== */
+.text-xs:not(h1):not(h2):not(h3):not(h4){font-size:14px!important;line-height:20px!important}
+.text-sm:not(h1):not(h2):not(h3):not(h4){font-size:16px!important;line-height:24px!important}
+.text-base:not(h1):not(h2):not(h3):not(h4){font-size:18px!important;line-height:28px!important}
+.text-lg:not(h1):not(h2):not(h3):not(h4){font-size:20px!important;line-height:30px!important}
+.text-xl:not(h1):not(h2):not(h3):not(h4){font-size:22px!important;line-height:30px!important}
+.text-2xl:not(h1):not(h2):not(h3):not(h4){font-size:26px!important;line-height:34px!important}
+.text-3xl:not(h1):not(h2):not(h3):not(h4){font-size:32px!important;line-height:40px!important}
+.text-4xl:not(h1):not(h2):not(h3):not(h4){font-size:38px!important;line-height:44px!important}
+.text-5xl:not(h1):not(h2):not(h3):not(h4){font-size:50px!important;line-height:56px!important}
+.text-6xl:not(h1):not(h2):not(h3):not(h4){font-size:62px!important;line-height:68px!important}
+.text-caption:not(h1):not(h2):not(h3):not(h4){font-size:14px!important;line-height:20px!important}
+.text-label-md:not(h1):not(h2):not(h3):not(h4){font-size:16px!important;line-height:22px!important}
+.text-body-md:not(h1):not(h2):not(h3):not(h4){font-size:18px!important;line-height:28px!important}
+.text-body-lg:not(h1):not(h2):not(h3):not(h4){font-size:20px!important;line-height:30px!important}
+.text-headline-md:not(h1):not(h2):not(h3):not(h4){font-size:26px!important;line-height:34px!important}
+.text-headline-lg-mobile:not(h1):not(h2):not(h3):not(h4){font-size:30px!important;line-height:38px!important}
+.text-headline-lg:not(h1):not(h2):not(h3):not(h4){font-size:34px!important;line-height:42px!important}
+.text-display-lg:not(h1):not(h2):not(h3):not(h4){font-size:50px!important;line-height:58px!important}
+.text-\[10px\]:not(h1):not(h2):not(h3):not(h4){font-size:14px!important;line-height:20px!important}
+.text-\[11px\]:not(h1):not(h2):not(h3):not(h4){font-size:14px!important;line-height:20px!important}
+.text-\[52px\]:not(h1):not(h2):not(h3):not(h4){font-size:54px!important;line-height:60px!important}
+@media (min-width:640px){
+.sm\:text-xs:not(h1):not(h2):not(h3):not(h4){font-size:14px!important;line-height:20px!important}
+.sm\:text-sm:not(h1):not(h2):not(h3):not(h4){font-size:16px!important;line-height:24px!important}
+.sm\:text-base:not(h1):not(h2):not(h3):not(h4){font-size:18px!important;line-height:28px!important}
+.sm\:text-lg:not(h1):not(h2):not(h3):not(h4){font-size:20px!important;line-height:30px!important}
+.sm\:text-xl:not(h1):not(h2):not(h3):not(h4){font-size:22px!important;line-height:30px!important}
+.sm\:text-2xl:not(h1):not(h2):not(h3):not(h4){font-size:26px!important;line-height:34px!important}
+.sm\:text-3xl:not(h1):not(h2):not(h3):not(h4){font-size:32px!important;line-height:40px!important}
+.sm\:text-4xl:not(h1):not(h2):not(h3):not(h4){font-size:38px!important;line-height:44px!important}
+.sm\:text-5xl:not(h1):not(h2):not(h3):not(h4){font-size:50px!important;line-height:56px!important}
+.sm\:text-6xl:not(h1):not(h2):not(h3):not(h4){font-size:62px!important;line-height:68px!important}
+.sm\:text-caption:not(h1):not(h2):not(h3):not(h4){font-size:14px!important;line-height:20px!important}
+.sm\:text-label-md:not(h1):not(h2):not(h3):not(h4){font-size:16px!important;line-height:22px!important}
+.sm\:text-body-md:not(h1):not(h2):not(h3):not(h4){font-size:18px!important;line-height:28px!important}
+.sm\:text-body-lg:not(h1):not(h2):not(h3):not(h4){font-size:20px!important;line-height:30px!important}
+.sm\:text-headline-md:not(h1):not(h2):not(h3):not(h4){font-size:26px!important;line-height:34px!important}
+.sm\:text-headline-lg-mobile:not(h1):not(h2):not(h3):not(h4){font-size:30px!important;line-height:38px!important}
+.sm\:text-headline-lg:not(h1):not(h2):not(h3):not(h4){font-size:34px!important;line-height:42px!important}
+.sm\:text-display-lg:not(h1):not(h2):not(h3):not(h4){font-size:50px!important;line-height:58px!important}
+.sm\:text-\[10px\]:not(h1):not(h2):not(h3):not(h4){font-size:14px!important;line-height:20px!important}
+.sm\:text-\[11px\]:not(h1):not(h2):not(h3):not(h4){font-size:14px!important;line-height:20px!important}
+.sm\:text-\[52px\]:not(h1):not(h2):not(h3):not(h4){font-size:54px!important;line-height:60px!important}
+}
+@media (min-width:768px){
+.md\:text-xs:not(h1):not(h2):not(h3):not(h4){font-size:14px!important;line-height:20px!important}
+.md\:text-sm:not(h1):not(h2):not(h3):not(h4){font-size:16px!important;line-height:24px!important}
+.md\:text-base:not(h1):not(h2):not(h3):not(h4){font-size:18px!important;line-height:28px!important}
+.md\:text-lg:not(h1):not(h2):not(h3):not(h4){font-size:20px!important;line-height:30px!important}
+.md\:text-xl:not(h1):not(h2):not(h3):not(h4){font-size:22px!important;line-height:30px!important}
+.md\:text-2xl:not(h1):not(h2):not(h3):not(h4){font-size:26px!important;line-height:34px!important}
+.md\:text-3xl:not(h1):not(h2):not(h3):not(h4){font-size:32px!important;line-height:40px!important}
+.md\:text-4xl:not(h1):not(h2):not(h3):not(h4){font-size:38px!important;line-height:44px!important}
+.md\:text-5xl:not(h1):not(h2):not(h3):not(h4){font-size:50px!important;line-height:56px!important}
+.md\:text-6xl:not(h1):not(h2):not(h3):not(h4){font-size:62px!important;line-height:68px!important}
+.md\:text-caption:not(h1):not(h2):not(h3):not(h4){font-size:14px!important;line-height:20px!important}
+.md\:text-label-md:not(h1):not(h2):not(h3):not(h4){font-size:16px!important;line-height:22px!important}
+.md\:text-body-md:not(h1):not(h2):not(h3):not(h4){font-size:18px!important;line-height:28px!important}
+.md\:text-body-lg:not(h1):not(h2):not(h3):not(h4){font-size:20px!important;line-height:30px!important}
+.md\:text-headline-md:not(h1):not(h2):not(h3):not(h4){font-size:26px!important;line-height:34px!important}
+.md\:text-headline-lg-mobile:not(h1):not(h2):not(h3):not(h4){font-size:30px!important;line-height:38px!important}
+.md\:text-headline-lg:not(h1):not(h2):not(h3):not(h4){font-size:34px!important;line-height:42px!important}
+.md\:text-display-lg:not(h1):not(h2):not(h3):not(h4){font-size:50px!important;line-height:58px!important}
+.md\:text-\[10px\]:not(h1):not(h2):not(h3):not(h4){font-size:14px!important;line-height:20px!important}
+.md\:text-\[11px\]:not(h1):not(h2):not(h3):not(h4){font-size:14px!important;line-height:20px!important}
+.md\:text-\[52px\]:not(h1):not(h2):not(h3):not(h4){font-size:54px!important;line-height:60px!important}
+}
+@media (min-width:1024px){
+.lg\:text-xs:not(h1):not(h2):not(h3):not(h4){font-size:14px!important;line-height:20px!important}
+.lg\:text-sm:not(h1):not(h2):not(h3):not(h4){font-size:16px!important;line-height:24px!important}
+.lg\:text-base:not(h1):not(h2):not(h3):not(h4){font-size:18px!important;line-height:28px!important}
+.lg\:text-lg:not(h1):not(h2):not(h3):not(h4){font-size:20px!important;line-height:30px!important}
+.lg\:text-xl:not(h1):not(h2):not(h3):not(h4){font-size:22px!important;line-height:30px!important}
+.lg\:text-2xl:not(h1):not(h2):not(h3):not(h4){font-size:26px!important;line-height:34px!important}
+.lg\:text-3xl:not(h1):not(h2):not(h3):not(h4){font-size:32px!important;line-height:40px!important}
+.lg\:text-4xl:not(h1):not(h2):not(h3):not(h4){font-size:38px!important;line-height:44px!important}
+.lg\:text-5xl:not(h1):not(h2):not(h3):not(h4){font-size:50px!important;line-height:56px!important}
+.lg\:text-6xl:not(h1):not(h2):not(h3):not(h4){font-size:62px!important;line-height:68px!important}
+.lg\:text-caption:not(h1):not(h2):not(h3):not(h4){font-size:14px!important;line-height:20px!important}
+.lg\:text-label-md:not(h1):not(h2):not(h3):not(h4){font-size:16px!important;line-height:22px!important}
+.lg\:text-body-md:not(h1):not(h2):not(h3):not(h4){font-size:18px!important;line-height:28px!important}
+.lg\:text-body-lg:not(h1):not(h2):not(h3):not(h4){font-size:20px!important;line-height:30px!important}
+.lg\:text-headline-md:not(h1):not(h2):not(h3):not(h4){font-size:26px!important;line-height:34px!important}
+.lg\:text-headline-lg-mobile:not(h1):not(h2):not(h3):not(h4){font-size:30px!important;line-height:38px!important}
+.lg\:text-headline-lg:not(h1):not(h2):not(h3):not(h4){font-size:34px!important;line-height:42px!important}
+.lg\:text-display-lg:not(h1):not(h2):not(h3):not(h4){font-size:50px!important;line-height:58px!important}
+.lg\:text-\[10px\]:not(h1):not(h2):not(h3):not(h4){font-size:14px!important;line-height:20px!important}
+.lg\:text-\[11px\]:not(h1):not(h2):not(h3):not(h4){font-size:14px!important;line-height:20px!important}
+.lg\:text-\[52px\]:not(h1):not(h2):not(h3):not(h4){font-size:54px!important;line-height:60px!important}
+}
+@media (min-width:1280px){
+.xl\:text-xs:not(h1):not(h2):not(h3):not(h4){font-size:14px!important;line-height:20px!important}
+.xl\:text-sm:not(h1):not(h2):not(h3):not(h4){font-size:16px!important;line-height:24px!important}
+.xl\:text-base:not(h1):not(h2):not(h3):not(h4){font-size:18px!important;line-height:28px!important}
+.xl\:text-lg:not(h1):not(h2):not(h3):not(h4){font-size:20px!important;line-height:30px!important}
+.xl\:text-xl:not(h1):not(h2):not(h3):not(h4){font-size:22px!important;line-height:30px!important}
+.xl\:text-2xl:not(h1):not(h2):not(h3):not(h4){font-size:26px!important;line-height:34px!important}
+.xl\:text-3xl:not(h1):not(h2):not(h3):not(h4){font-size:32px!important;line-height:40px!important}
+.xl\:text-4xl:not(h1):not(h2):not(h3):not(h4){font-size:38px!important;line-height:44px!important}
+.xl\:text-5xl:not(h1):not(h2):not(h3):not(h4){font-size:50px!important;line-height:56px!important}
+.xl\:text-6xl:not(h1):not(h2):not(h3):not(h4){font-size:62px!important;line-height:68px!important}
+.xl\:text-caption:not(h1):not(h2):not(h3):not(h4){font-size:14px!important;line-height:20px!important}
+.xl\:text-label-md:not(h1):not(h2):not(h3):not(h4){font-size:16px!important;line-height:22px!important}
+.xl\:text-body-md:not(h1):not(h2):not(h3):not(h4){font-size:18px!important;line-height:28px!important}
+.xl\:text-body-lg:not(h1):not(h2):not(h3):not(h4){font-size:20px!important;line-height:30px!important}
+.xl\:text-headline-md:not(h1):not(h2):not(h3):not(h4){font-size:26px!important;line-height:34px!important}
+.xl\:text-headline-lg-mobile:not(h1):not(h2):not(h3):not(h4){font-size:30px!important;line-height:38px!important}
+.xl\:text-headline-lg:not(h1):not(h2):not(h3):not(h4){font-size:34px!important;line-height:42px!important}
+.xl\:text-display-lg:not(h1):not(h2):not(h3):not(h4){font-size:50px!important;line-height:58px!important}
+.xl\:text-\[10px\]:not(h1):not(h2):not(h3):not(h4){font-size:14px!important;line-height:20px!important}
+.xl\:text-\[11px\]:not(h1):not(h2):not(h3):not(h4){font-size:14px!important;line-height:20px!important}
+.xl\:text-\[52px\]:not(h1):not(h2):not(h3):not(h4){font-size:54px!important;line-height:60px!important}
+}
+
+/* ===== Header fit: keeps the larger font from overflowing the nav bar ===== */
+#navbar .text-label-md { font-size: 15px !important; line-height: 20px !important; }
+#navbar .px-3\.5 { padding-left: 10px !important; padding-right: 10px !important; }
+@media (min-width: 1024px) and (max-width: 1259px) {
+  #navbar .hidden.lg\:flex { display: none !important; }
+  #navbar button.lg\:hidden { display: inline-flex !important; }
+  #mobile-nav-panel:not(.hidden) { display: block !important; }
+}
+@media (min-width: 1260px) and (max-width: 1365px) {
+  #navbar > div { padding-left: 24px !important; padding-right: 24px !important; }
+}
