@@ -149,11 +149,14 @@
   </section>
 
   <!-- Interactive Filter, Search & District Segment Bar -->
-  <section class="sticky top-[72px] lg:top-[80px] z-30 bg-white/95 backdrop-blur-md border-b border-outline-variant/60 shadow-xs py-4 px-4 sm:px-6 lg:px-8">
-    <div class="max-w-7xl mx-auto space-y-4">
+  <section class="sticky top-[72px] lg:top-[80px] z-30 bg-white/95 backdrop-blur-md border-b border-outline-variant/60 shadow-xs py-3 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-7xl mx-auto space-y-3">
 
       <!-- Search Bar -->
-      <div class="flex flex-col lg:flex-row items-stretch lg:items-center justify-end gap-4">
+      <div class="flex flex-col lg:flex-row items-stretch lg:items-center justify-between gap-2 lg:gap-4">
+        <div id="project-results-count" class="text-slate-500 font-medium">
+          Showing 16 of 16 installations
+        </div>
         <div class="relative w-full lg:w-72 flex-shrink-0">
           <span class="material-symbols-outlined absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-400 text-lg pointer-events-none">search</span>
           <input 
@@ -166,7 +169,7 @@
       </div>
 
       <!-- Location Filter Chips & Results Count -->
-      <div class="flex flex-wrap items-center justify-between gap-3 pt-2 border-t border-slate-100 text-xs sm:text-sm">
+      <div class="flex flex-wrap items-center gap-3 text-xs sm:text-sm">
         <div class="flex items-center gap-1.5 flex-wrap">
           <span class="text-slate-500 font-medium mr-1 flex items-center gap-1">
             <span class="material-symbols-outlined text-sm">place</span>
@@ -195,9 +198,6 @@
           </button>
         </div>
 
-        <div id="project-results-count" class="text-slate-500 font-medium">
-          Showing 16 of 16 installations
-        </div>
       </div>
 
     </div>
@@ -891,7 +891,7 @@
             class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-full border border-outline-variant text-primary hover:bg-white font-semibold text-sm transition-colors min-h-[48px]"
           >
             <span class="material-symbols-outlined text-base">call</span>
-            <span>+91 8883663001 / +91 9677182998</span>
+            <span>+91&nbsp;8883663001 / +91&nbsp;9677182998</span>
           </a>
         </div>
       </div>
@@ -1070,7 +1070,7 @@
           class="w-full sm:w-auto px-8 py-4 rounded-full bg-white/10 hover:bg-white/20 text-white font-semibold text-sm sm:text-base transition-all duration-200 border border-white/20 min-h-[48px] flex items-center justify-center gap-2"
         >
           <span class="material-symbols-outlined text-base text-[#4a4ce0]">call</span>
-          <span>Call: +91 8883663001 / +91 9677182998</span>
+          <span>Call: +91&nbsp;8883663001 / +91&nbsp;9677182998</span>
         </a>
       </div>
 
@@ -1129,7 +1129,7 @@
           <li>
             <a class="font-body-md text-body-md text-on-primary/80 hover:text-[#4a4ce0] transition-colors text-sm min-h-[44px] flex items-center gap-3 py-1.5" href="tel:+918883663001">
               <span class="material-symbols-outlined text-[#4a4ce0] text-lg flex-shrink-0">call</span>
-              <span>+91 8883663001 / +91 9677182998</span>
+              <span>+91&nbsp;8883663001 / +91&nbsp;9677182998</span>
             </a>
           </li>
           <li>
