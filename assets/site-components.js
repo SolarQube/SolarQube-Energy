@@ -325,6 +325,7 @@ ${showBanner ? `
           <li><a class="font-body-md text-body-md text-on-primary/80 hover:text-[#7b7dff] transition-colors min-h-[44px] inline-flex items-center py-2 ${active === 'careers' ? 'text-white font-bold' : ''}" href="careers.html">Careers</a></li>
           <li><a class="font-body-md text-body-md text-on-primary/80 hover:text-[#7b7dff] transition-colors min-h-[44px] inline-flex items-center py-2 ${active === 'residential' ? 'text-white font-bold' : ''}" href="residential-solar.html">Residential Solar</a></li>
           <li><a class="font-body-md text-body-md text-on-primary/80 hover:text-[#7b7dff] transition-colors min-h-[44px] inline-flex items-center py-2 ${active === 'commercial' ? 'text-white font-bold' : ''}" href="commercial-industrial-solar.html">Commercial & Industrial</a></li>
+          <li><a class="font-body-md text-body-md text-on-primary/80 hover:text-[#7b7dff] transition-colors min-h-[44px] inline-flex items-center py-2 ${active === 'bess' ? 'text-white font-bold' : ''}" href="battery-storage-bess.html">Battery Storage (BESS)</a></li>
           <li><a class="font-body-md text-body-md text-on-primary/80 hover:text-[#7b7dff] transition-colors min-h-[44px] inline-flex items-center py-2 ${active === 'canopies' ? 'text-white font-bold' : ''}" href="solar-canopies-carports.html">Solar Canopies</a></li>
           <li><a class="font-body-md text-body-md text-on-primary/80 hover:text-[#7b7dff] transition-colors min-h-[44px] inline-flex items-center py-2 ${active === 'open-access' ? 'text-white font-bold' : ''}" href="open-access-solar.html">Open Access & PPA</a></li>
           <li><a class="font-body-md text-body-md text-on-primary/80 hover:text-[#7b7dff] transition-colors min-h-[44px] inline-flex items-center py-2 ${active === 'utility' ? 'text-white font-bold' : ''}" href="utility-scale-solar.html">Utility Scale</a></li>
@@ -347,7 +348,7 @@ ${showBanner ? `
           <li>
             <a class="font-body-md text-body-md text-on-primary/80 hover:text-[#7b7dff] transition-colors text-sm min-h-[44px] flex items-center gap-3 py-1.5" href="tel:+918883663001">
               <span class="material-symbols-outlined text-[#7b7dff] text-lg flex-shrink-0">call</span>
-              <span>+91 8883663001</span>
+              <span>+91&nbsp;8883663001</span>
             </a>
           </li>
           <li>

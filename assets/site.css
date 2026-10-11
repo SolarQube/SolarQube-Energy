@@ -250,7 +250,7 @@ h4 { font-size: 16px !important; line-height: 22px !important; letter-spacing: 0
 .text-xs:not(h1):not(h2):not(h3):not(h4){font-size:14px!important;line-height:20px!important}
 .text-sm:not(h1):not(h2):not(h3):not(h4){font-size:16px!important;line-height:24px!important}
 .text-base:not(h1):not(h2):not(h3):not(h4){font-size:18px!important;line-height:28px!important}
-.text-lg:not(h1):not(h2):not(h3):not(h4){font-size:20px!important;line-height:30px!important}
+.text-lg:not(h1):not(h2):not(h3):not(h4){font-size:18px!important;line-height:28px!important}
 .text-xl:not(h1):not(h2):not(h3):not(h4){font-size:22px!important;line-height:30px!important}
 .text-2xl:not(h1):not(h2):not(h3):not(h4){font-size:26px!important;line-height:34px!important}
 .text-3xl:not(h1):not(h2):not(h3):not(h4){font-size:32px!important;line-height:40px!important}
@@ -260,7 +260,7 @@ h4 { font-size: 16px !important; line-height: 22px !important; letter-spacing: 0
 .text-caption:not(h1):not(h2):not(h3):not(h4){font-size:14px!important;line-height:20px!important}
 .text-label-md:not(h1):not(h2):not(h3):not(h4){font-size:16px!important;line-height:22px!important}
 .text-body-md:not(h1):not(h2):not(h3):not(h4){font-size:18px!important;line-height:28px!important}
-.text-body-lg:not(h1):not(h2):not(h3):not(h4){font-size:20px!important;line-height:30px!important}
+.text-body-lg:not(h1):not(h2):not(h3):not(h4){font-size:18px!important;line-height:28px!important}
 .text-headline-md:not(h1):not(h2):not(h3):not(h4){font-size:26px!important;line-height:34px!important}
 .text-headline-lg-mobile:not(h1):not(h2):not(h3):not(h4){font-size:30px!important;line-height:38px!important}
 .text-headline-lg:not(h1):not(h2):not(h3):not(h4){font-size:34px!important;line-height:42px!important}
@@ -272,7 +272,7 @@ h4 { font-size: 16px !important; line-height: 22px !important; letter-spacing: 0
 .sm\:text-xs:not(h1):not(h2):not(h3):not(h4){font-size:14px!important;line-height:20px!important}
 .sm\:text-sm:not(h1):not(h2):not(h3):not(h4){font-size:16px!important;line-height:24px!important}
 .sm\:text-base:not(h1):not(h2):not(h3):not(h4){font-size:18px!important;line-height:28px!important}
-.sm\:text-lg:not(h1):not(h2):not(h3):not(h4){font-size:20px!important;line-height:30px!important}
+.sm\:text-lg:not(h1):not(h2):not(h3):not(h4){font-size:18px!important;line-height:28px!important}
 .sm\:text-xl:not(h1):not(h2):not(h3):not(h4){font-size:22px!important;line-height:30px!important}
 .sm\:text-2xl:not(h1):not(h2):not(h3):not(h4){font-size:26px!important;line-height:34px!important}
 .sm\:text-3xl:not(h1):not(h2):not(h3):not(h4){font-size:32px!important;line-height:40px!important}
@@ -282,7 +282,7 @@ h4 { font-size: 16px !important; line-height: 22px !important; letter-spacing: 0
 .sm\:text-caption:not(h1):not(h2):not(h3):not(h4){font-size:14px!important;line-height:20px!important}
 .sm\:text-label-md:not(h1):not(h2):not(h3):not(h4){font-size:16px!important;line-height:22px!important}
 .sm\:text-body-md:not(h1):not(h2):not(h3):not(h4){font-size:18px!important;line-height:28px!important}
-.sm\:text-body-lg:not(h1):not(h2):not(h3):not(h4){font-size:20px!important;line-height:30px!important}
+.sm\:text-body-lg:not(h1):not(h2):not(h3):not(h4){font-size:18px!important;line-height:28px!important}
 .sm\:text-headline-md:not(h1):not(h2):not(h3):not(h4){font-size:26px!important;line-height:34px!important}
 .sm\:text-headline-lg-mobile:not(h1):not(h2):not(h3):not(h4){font-size:30px!important;line-height:38px!important}
 .sm\:text-headline-lg:not(h1):not(h2):not(h3):not(h4){font-size:34px!important;line-height:42px!important}
@@ -295,7 +295,7 @@ h4 { font-size: 16px !important; line-height: 22px !important; letter-spacing: 0
 .md\:text-xs:not(h1):not(h2):not(h3):not(h4){font-size:14px!important;line-height:20px!important}
 .md\:text-sm:not(h1):not(h2):not(h3):not(h4){font-size:16px!important;line-height:24px!important}
 .md\:text-base:not(h1):not(h2):not(h3):not(h4){font-size:18px!important;line-height:28px!important}
-.md\:text-lg:not(h1):not(h2):not(h3):not(h4){font-size:20px!important;line-height:30px!important}
+.md\:text-lg:not(h1):not(h2):not(h3):not(h4){font-size:18px!important;line-height:28px!important}
 .md\:text-xl:not(h1):not(h2):not(h3):not(h4){font-size:22px!important;line-height:30px!important}
 .md\:text-2xl:not(h1):not(h2):not(h3):not(h4){font-size:26px!important;line-height:34px!important}
 .md\:text-3xl:not(h1):not(h2):not(h3):not(h4){font-size:32px!important;line-height:40px!important}
@@ -305,7 +305,7 @@ h4 { font-size: 16px !important; line-height: 22px !important; letter-spacing: 0
 .md\:text-caption:not(h1):not(h2):not(h3):not(h4){font-size:14px!important;line-height:20px!important}
 .md\:text-label-md:not(h1):not(h2):not(h3):not(h4){font-size:16px!important;line-height:22px!important}
 .md\:text-body-md:not(h1):not(h2):not(h3):not(h4){font-size:18px!important;line-height:28px!important}
-.md\:text-body-lg:not(h1):not(h2):not(h3):not(h4){font-size:20px!important;line-height:30px!important}
+.md\:text-body-lg:not(h1):not(h2):not(h3):not(h4){font-size:18px!important;line-height:28px!important}
 .md\:text-headline-md:not(h1):not(h2):not(h3):not(h4){font-size:26px!important;line-height:34px!important}
 .md\:text-headline-lg-mobile:not(h1):not(h2):not(h3):not(h4){font-size:30px!important;line-height:38px!important}
 .md\:text-headline-lg:not(h1):not(h2):not(h3):not(h4){font-size:34px!important;line-height:42px!important}
@@ -318,7 +318,7 @@ h4 { font-size: 16px !important; line-height: 22px !important; letter-spacing: 0
 .lg\:text-xs:not(h1):not(h2):not(h3):not(h4){font-size:14px!important;line-height:20px!important}
 .lg\:text-sm:not(h1):not(h2):not(h3):not(h4){font-size:16px!important;line-height:24px!important}
 .lg\:text-base:not(h1):not(h2):not(h3):not(h4){font-size:18px!important;line-height:28px!important}
-.lg\:text-lg:not(h1):not(h2):not(h3):not(h4){font-size:20px!important;line-height:30px!important}
+.lg\:text-lg:not(h1):not(h2):not(h3):not(h4){font-size:18px!important;line-height:28px!important}
 .lg\:text-xl:not(h1):not(h2):not(h3):not(h4){font-size:22px!important;line-height:30px!important}
 .lg\:text-2xl:not(h1):not(h2):not(h3):not(h4){font-size:26px!important;line-height:34px!important}
 .lg\:text-3xl:not(h1):not(h2):not(h3):not(h4){font-size:32px!important;line-height:40px!important}
@@ -328,7 +328,7 @@ h4 { font-size: 16px !important; line-height: 22px !important; letter-spacing: 0
 .lg\:text-caption:not(h1):not(h2):not(h3):not(h4){font-size:14px!important;line-height:20px!important}
 .lg\:text-label-md:not(h1):not(h2):not(h3):not(h4){font-size:16px!important;line-height:22px!important}
 .lg\:text-body-md:not(h1):not(h2):not(h3):not(h4){font-size:18px!important;line-height:28px!important}
-.lg\:text-body-lg:not(h1):not(h2):not(h3):not(h4){font-size:20px!important;line-height:30px!important}
+.lg\:text-body-lg:not(h1):not(h2):not(h3):not(h4){font-size:18px!important;line-height:28px!important}
 .lg\:text-headline-md:not(h1):not(h2):not(h3):not(h4){font-size:26px!important;line-height:34px!important}
 .lg\:text-headline-lg-mobile:not(h1):not(h2):not(h3):not(h4){font-size:30px!important;line-height:38px!important}
 .lg\:text-headline-lg:not(h1):not(h2):not(h3):not(h4){font-size:34px!important;line-height:42px!important}
@@ -341,7 +341,7 @@ h4 { font-size: 16px !important; line-height: 22px !important; letter-spacing: 0
 .xl\:text-xs:not(h1):not(h2):not(h3):not(h4){font-size:14px!important;line-height:20px!important}
 .xl\:text-sm:not(h1):not(h2):not(h3):not(h4){font-size:16px!important;line-height:24px!important}
 .xl\:text-base:not(h1):not(h2):not(h3):not(h4){font-size:18px!important;line-height:28px!important}
-.xl\:text-lg:not(h1):not(h2):not(h3):not(h4){font-size:20px!important;line-height:30px!important}
+.xl\:text-lg:not(h1):not(h2):not(h3):not(h4){font-size:18px!important;line-height:28px!important}
 .xl\:text-xl:not(h1):not(h2):not(h3):not(h4){font-size:22px!important;line-height:30px!important}
 .xl\:text-2xl:not(h1):not(h2):not(h3):not(h4){font-size:26px!important;line-height:34px!important}
 .xl\:text-3xl:not(h1):not(h2):not(h3):not(h4){font-size:32px!important;line-height:40px!important}
@@ -351,7 +351,7 @@ h4 { font-size: 16px !important; line-height: 22px !important; letter-spacing: 0
 .xl\:text-caption:not(h1):not(h2):not(h3):not(h4){font-size:14px!important;line-height:20px!important}
 .xl\:text-label-md:not(h1):not(h2):not(h3):not(h4){font-size:16px!important;line-height:22px!important}
 .xl\:text-body-md:not(h1):not(h2):not(h3):not(h4){font-size:18px!important;line-height:28px!important}
-.xl\:text-body-lg:not(h1):not(h2):not(h3):not(h4){font-size:20px!important;line-height:30px!important}
+.xl\:text-body-lg:not(h1):not(h2):not(h3):not(h4){font-size:18px!important;line-height:28px!important}
 .xl\:text-headline-md:not(h1):not(h2):not(h3):not(h4){font-size:26px!important;line-height:34px!important}
 .xl\:text-headline-lg-mobile:not(h1):not(h2):not(h3):not(h4){font-size:30px!important;line-height:38px!important}
 .xl\:text-headline-lg:not(h1):not(h2):not(h3):not(h4){font-size:34px!important;line-height:42px!important}
@@ -372,3 +372,6 @@ h4 { font-size: 16px !important; line-height: 22px !important; letter-spacing: 0
 @media (min-width: 1260px) and (max-width: 1365px) {
   #navbar > div { padding-left: 24px !important; padding-right: 24px !important; }
 }
+
+/* Phone numbers never break in the middle (+91 stays with the digits) */
+a[href^="tel:"] { white-space: nowrap; }
