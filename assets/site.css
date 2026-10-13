@@ -237,7 +237,7 @@ h1, h2, h3, h4 { letter-spacing: -0.02em; font-weight: 700 !important; }
 h1 { font-size: 32px !important; line-height: 40px !important; }
 h2 { font-size: 28px !important; line-height: 36px !important; }
 h3 { font-size: 22px !important; line-height: 30px !important; letter-spacing: -0.01em; }
-h4 { font-size: 16px !important; line-height: 22px !important; letter-spacing: 0.05em; }
+h4 { font-size: 18px !important; line-height: 26px !important; letter-spacing: 0 !important; }
 
 @media (min-width: 768px) {
   h1 { font-size: 50px !important; line-height: 58px !important; }
@@ -383,7 +383,7 @@ footer :is(p, span, div, a)[class].text-caption:not(.material-symbols-outlined) 
   font-size: 13px !important;
   line-height: 20px !important;
 }
-footer h4 { font-size: 14px !important; line-height: 20px !important; }
+footer h4 { font-size: 14px !important; line-height: 20px !important; letter-spacing: 0.05em !important; }
 
 /* ===== Header: bold top-level nav links ===== */
 #navbar .hidden.lg\:flex > a,
