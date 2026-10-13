@@ -310,7 +310,7 @@ ${showBanner ? `
         <img width="394" height="104" alt="SolarQube Energy - Solar Company in Salem, Tamil Nadu" class="h-12 w-auto object-contain" src="/assets/logo/solarqube-logo-sm.jpg"/>
       </a>
       <p class="font-body-md text-body-md text-on-primary/80 max-w-sm mb-6 leading-relaxed">
-        SolarQube Energy is a solar company in Salem, Tamil Nadu delivering complete solar EPC solutions for homes, businesses, and industrial facilities across Jalakandapuram, Salem, Erode, Tharamangalam, and surrounding areas.
+        SolarQube Energy is a solar company in Salem, Tamil Nadu delivering complete solar EPC solutions for homes, businesses, and industrial facilities across Jalakandapuram, Salem, Erode, Coimbatore, and surrounding areas.
       </p>
       <p class="font-caption text-caption text-on-primary/60">© <span class="copyright-year">${currentYear}</span> SolarQube Energy. All Rights Reserved.</p>
     </div>
@@ -333,7 +333,7 @@ ${showBanner ? `
           <li><a class="font-body-md text-body-md text-on-primary/80 hover:text-[#7b7dff] transition-colors min-h-[44px] inline-flex items-center py-2 ${active === 'contact' ? 'text-white font-bold' : ''}" href="contact.html">Contact Us</a></li>
           <li><a class="font-body-md text-body-md text-on-primary/80 hover:text-[#7b7dff] transition-colors min-h-[44px] inline-flex items-center py-2 ${active === 'contact' ? 'text-white font-bold' : ''}" href="solar-company-salem.html">Solar Company in Salem</a></li>
           <li><a class="font-body-md text-body-md text-on-primary/80 hover:text-[#7b7dff] transition-colors min-h-[44px] inline-flex items-center py-2 ${active === 'contact' ? 'text-white font-bold' : ''}" href="solar-company-erode.html">Solar Company in Erode</a></li>
-          <li><a class="font-body-md text-body-md text-on-primary/80 hover:text-[#7b7dff] transition-colors min-h-[44px] inline-flex items-center py-2 ${active === 'contact' ? 'text-white font-bold' : ''}" href="solar-installation-tharamangalam.html">Solar in Tharamangalam</a></li>
+          <li><a class="font-body-md text-body-md text-on-primary/80 hover:text-[#7b7dff] transition-colors min-h-[44px] inline-flex items-center py-2 ${active === 'contact' ? 'text-white font-bold' : ''}" href="solar-company-coimbatore.html">Solar Company in Coimbatore</a></li>
         </ul>
       </div>
 

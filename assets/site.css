@@ -373,5 +373,21 @@ h4 { font-size: 16px !important; line-height: 22px !important; letter-spacing: 0
   #navbar > div { padding-left: 24px !important; padding-right: 24px !important; }
 }
 
-/* Phone numbers never break in the middle (+91 stays with the digits) */
-a[href^="tel:"] { white-space: nowrap; }
+
+/* ===== Footer: smaller text on every page ===== */
+footer :is(a, p, li, span, div, address)[class]:not(.material-symbols-outlined) {
+  font-size: 15px !important;
+  line-height: 24px !important;
+}
+footer :is(p, span, div, a)[class].text-caption:not(.material-symbols-outlined) {
+  font-size: 13px !important;
+  line-height: 20px !important;
+}
+footer h4 { font-size: 14px !important; line-height: 20px !important; }
+
+/* ===== Header: bold top-level nav links ===== */
+#navbar .hidden.lg\:flex > a,
+#navbar .hidden.lg\:flex > .group > button,
+#navbar .hidden.lg\:flex > .group > a {
+  font-weight: 700 !important;
+}
