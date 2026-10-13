@@ -18,6 +18,7 @@
     'contact-enquiry-form': function () { window.location.href = 'thank-you.html'; },
     'home-enquiry-form': function () { window.location.href = 'thank-you.html'; },
     'open-access-form': function () { showInlineSuccess(); },
+    'town-enquiry-form': function () { showInlineSuccess(); },
     'carport-assessment-form': function () { showInlineSuccess(); }
   };
 
