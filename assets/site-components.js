@@ -177,6 +177,7 @@
 
   <!-- Right CTA Button -->
   <div class="hidden lg:flex items-center gap-3">
+    <a href="support.html" class="sq-support-btn"><span class="material-symbols-outlined" aria-hidden="true">support_agent</span><span>Support</span></a>
     <a href="contact.html" class="inline-flex items-center justify-center gap-2 bg-primary text-on-primary font-label-md text-label-md px-5 py-2.5 min-h-[44px] rounded-full hover:bg-primary-container transition-all active:scale-95 btn-shimmer shadow-sm text-center font-semibold">
       <span>Get a Quote</span>
       <span class="material-symbols-outlined text-base">arrow_forward</span>
@@ -267,6 +268,10 @@
     <span class="material-symbols-outlined text-xl mr-3 text-secondary">mail</span>
     <span>Contact</span>
   </a>
+  <a class="min-h-[48px] flex items-center px-4 py-3 rounded-xl text-on-surface-variant hover:text-secondary active:bg-surface-container-low transition-all text-base border-b border-outline-variant/20" href="support.html">
+    <span class="material-symbols-outlined text-xl mr-3 text-secondary">support_agent</span>
+    <span>Support</span>
+  </a>
 
   <!-- Mobile High-Visibility CTA Button -->
   <div class="pt-3 pb-2">
@@ -312,7 +317,7 @@ ${showBanner ? `
       <p class="font-body-md text-body-md text-on-primary/80 max-w-sm mb-6 leading-relaxed">
         SolarQube Energy is a solar company in Salem, Tamil Nadu delivering complete solar EPC solutions for homes, businesses, and industrial facilities across Jalakandapuram, Salem, Erode, Coimbatore, and surrounding areas.
       </p>
-      <p class="font-caption text-caption text-on-primary/60">© <span class="copyright-year">${currentYear}</span> SolarQube Energy. All Rights Reserved.</p>
+      <p class="font-caption text-caption text-on-primary/60">© <span class="copyright-year">${currentYear}</span> <a class="sq-credit" href="https://www.edgifydigital.in/" target="_blank" rel="noopener">Edgify Digital</a>. All Rights Reserved. <span aria-hidden="true">&nbsp;|&nbsp;</span> <a class="sq-credit sq-plain" href="privacy-policy.html">Privacy Policy</a></p>
     </div>
 
     <!-- Links Columns -->

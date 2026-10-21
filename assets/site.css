@@ -391,3 +391,13 @@ footer h4 { font-size: 14px !important; line-height: 20px !important; letter-spa
 #navbar .hidden.lg\:flex > .group > a {
   font-weight: 700 !important;
 }
+
+
+/* ---- Support button (header) & footer credit ---- */
+.sq-support-btn{display:inline-flex;align-items:center;justify-content:center;gap:6px;min-height:44px;padding:10px 20px;border-radius:9999px;border:1.5px solid #1b1d3a;background:transparent;color:#1b1d3a;font-family:'Plus Jakarta Sans',system-ui,sans-serif;font-size:14px;line-height:20px;font-weight:600;letter-spacing:.05em;text-decoration:none;transition:all .2s ease}
+.sq-support-btn .material-symbols-outlined{font-size:20px;color:#4a4ce0;transition:color .2s ease}
+.sq-support-btn:hover{background:#f6f6fd;border-color:#4a4ce0;color:#4a4ce0}
+.sq-support-btn:active{transform:scale(.95)}
+.sq-credit{color:inherit;font-weight:600;text-decoration:none}
+.sq-credit:hover{color:#fff;text-decoration:underline;text-underline-offset:3px}
+.sq-credit.sq-plain{font-weight:400}
